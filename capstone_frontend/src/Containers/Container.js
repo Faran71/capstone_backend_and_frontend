@@ -4,9 +4,16 @@ import ProductsPage from "../Components/ProductsPage";
 import OneProductPage from "../Components/OneProductPage";
 import LogInPage from "../Components/LogInPage"
 import OrderHistoryPage from "../Components/OrderHistoryPage"
+import { useState } from "react";
 
 const Container = () => {
 
+    const [products, setProducts] = useState({});
+    const [order, setOrder] = useState({});
+    const [customerDetails, setCustomerDetails] = useState({});
+    const [allOrders, setAllOrders] = useState({});
+    const [category, setCategory] = useState({});
+    const [currentProduct, setCurrentProduct] = useState({});
 
 
 

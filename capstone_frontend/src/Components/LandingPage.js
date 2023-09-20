@@ -1,3 +1,4 @@
+import CategoriesBox from "./CategoriesBox";
 import NavBar from "./NavBar";
 
 const LandingPage = () => {
@@ -5,6 +6,7 @@ const LandingPage = () => {
     return(
         <div>
             <NavBar />
+            <CategoriesBox />
         </div>
     )
 }
