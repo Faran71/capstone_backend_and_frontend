@@ -1,0 +1,123 @@
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vw;
+    padding-left: 2vw;
+
+}
+.clothes {
+    background-image: url('https://images.unsplash.com/photo-1542060748-10c28b62716f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Replace 'your-background-image.jpg' with your image file path */
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+
+}
+
+.clothes h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
+
+.electronics {
+    background-image: url('https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+}
+.electronics h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
+
+.home {
+    background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+}
+.home h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
+
+.books {
+    background-image: url('https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+}
+.books h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
+
+.cosmetics {
+    background-image: url('https://images.unsplash.com/photo-1610545936431-9983d41e52b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+}
+.cosmetics h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
+
+.jewellery {
+    background-image: url('https://images.unsplash.com/photo-1579726670131-487ecc8e1e8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    width: 30vw; /* Set a width for the div */
+    height: 40vh; /* Set a height for the div */
+    position: relative; /* Required for absolute positioning of the h2 element */
+}
+.jewellery h2 {
+    position: absolute; /* Position the h2 element absolutely within the div */
+    top: 50%; /* Position the h2 element vertically in the middle */
+    left: 50%; /* Position the h2 element horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the h2 element both horizontally and vertically */
+    color: white; /* Set the text color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional: Add a background color to make the text more readable */
+    padding: 10px; /* Optional: Add padding to the text */
+
+}
