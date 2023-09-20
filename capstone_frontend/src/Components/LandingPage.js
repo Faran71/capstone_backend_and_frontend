@@ -1,8 +1,10 @@
+import NavBar from "./NavBar";
+
 const LandingPage = () => {
 
     return(
         <div>
-
+            <NavBar />
         </div>
     )
 }
