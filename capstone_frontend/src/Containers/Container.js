@@ -22,7 +22,15 @@ const Container = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LandingPage />} key={1} />
-                    <Route path="/Products" element={<ProductsPage />} key={2} />
+                    <Route path="/Products" element={<ProductsPage 
+                    products={products} 
+                    order={order}
+                    setOrder={setOrder}
+                    category={category}
+                    setCategory={setCategory}
+                    currentProduct={currentProduct}
+                    setCurrentProduct={setCurrentProduct}
+                    />} key={2} />
                     <Route path="/OneProduct" element={<OneProductPage />} key={3} />
                     <Route path="/LogIn" element={<LogInPage />} key={4} />
                     <Route path="/OrderHistory" element={<OrderHistoryPage />} key={5} />
