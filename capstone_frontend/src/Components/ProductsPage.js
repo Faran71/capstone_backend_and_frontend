@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 
-const ProductsPage = () => {
+const ProductsPage = ({products, order, category, currentProduct, setOrder, setCategory, setCurrentProduct}) => {
 
     return(
         <div>
