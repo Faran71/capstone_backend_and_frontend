@@ -1,0 +1,7 @@
+.oneproduct img{
+width: 30VW;
+}
+.oneproduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

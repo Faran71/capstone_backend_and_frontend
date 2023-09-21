@@ -1,9 +1,11 @@
+import "./ProductsPage.css"
+
 const ProductDisplay = ({product}) => {
 
     return(
-        <div>
-            <img src={product.imageUrl}/> 
-            <h3>{product.name}</h3>
+        <div className="display-individual">
+                <img src={product.imageURL}/> 
+                <h3>{product.name}</h3>
         </div>
     )
 }

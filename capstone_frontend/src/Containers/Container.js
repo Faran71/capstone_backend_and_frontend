@@ -4,7 +4,7 @@ import ProductsPage from "../Components/ProductsPage";
 import OneProductPage from "../Components/OneProductPage";
 import LogInPage from "../Components/LogInPage"
 import OrderHistoryPage from "../Components/OrderHistoryPage"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Container = () => {
 
@@ -15,7 +15,15 @@ const Container = () => {
     const [category, setCategory] = useState({});
     const [currentProduct, setCurrentProduct] = useState({});
 
+    const fetchProducts = async () => {
+        const response = await fetch("http://localhost:8080/products");
+        const data = await response.json()
+        setProducts(data);
+    }
 
+    useEffect(() => {
+        fetchProducts();
+    },[])
 
     return (
         <div>
@@ -31,7 +39,7 @@ const Container = () => {
                     currentProduct={currentProduct}
                     setCurrentProduct={setCurrentProduct}
                     />} key={2} />
-                    <Route path="/OneProduct" element={<OneProductPage />} key={3} />
+                    <Route path="/OneProduct" element={<OneProductPage currentProduct={currentProduct}/>} key={3} />
                     <Route path="/LogIn" element={<LogInPage />} key={4} />
                     <Route path="/OrderHistory" element={<OrderHistoryPage />} key={5} />
 
