@@ -32,21 +32,12 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String name, String email, String address,String password, List<Order> orders) {
-        this.id = id;
+    public Customer(String name, String email, String address,String password, List<Order> orders) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.orders = orders;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setIg(Long id) {
-        this.id = id;
     }
 
     public String getName() {

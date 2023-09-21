@@ -29,18 +29,9 @@ public class ProductsOrders {
     }
 
     public ProductsOrders(Long id, int quantitySold, Product product, Order order) {
-        this.id = id;
         this.quantitySold = quantitySold;
         this.product = product;
         this.order = order;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public int getQuantitySold() {

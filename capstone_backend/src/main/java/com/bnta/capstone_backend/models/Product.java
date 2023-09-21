@@ -24,7 +24,7 @@ public class Product {
     @Column(name = "available_quantity")
     private int availableQuantity;
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", length = 1000)
     private String imageURL;
 
     @Column
@@ -33,14 +33,13 @@ public class Product {
     @Column
     private String item;
 
-    @Column
+    @Column(length = 1000)
     private String description;
 
     public Product() {
     }
 
-    public Product(Long id, String name, int price, int availableQuantity, String imageURL, String category, String item, String description) {
-        this.id = id;
+    public Product(String name, int price, int availableQuantity, String imageURL, String category, String item, String description) {
         this.name = name;
         this.price = price;
         this.availableQuantity = availableQuantity;
@@ -48,14 +47,6 @@ public class Product {
         this.category = category;
         this.item = item;
         this.description = description;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

@@ -40,20 +40,12 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long id, LocalDateTime orderDateTime, List<ProductsOrders> productsOrders, Customer customer) {
-        this.id = id;
+    public Order(LocalDateTime orderDateTime, List<ProductsOrders> productsOrders, Customer customer) {
         this.orderDateTime = orderDateTime;
         this.productsOrders = new ArrayList<>();
         this.customer = customer;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public LocalDateTime getOrderDateTime() {
         return orderDateTime;
