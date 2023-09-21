@@ -85,7 +85,7 @@ public class DataLoader implements ApplicationRunner {
                         "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
                         "Jewellery",
                         "Necklace",
-                        "Diamond encrusted 14-carat white gold surround in 50 spherical pearls. Length: 18 inches")
+                        "Diamond encrusted 14-carat white gold surround in 50 spherical freshwater pearls. Length: 18 inches")
         );
 
         for (ProductDTO product : products) {
