@@ -9,6 +9,8 @@ public class Customer {
 
     private String email;
 
+    private String password;
+
     private String address;
 
     private List<Order> orders;
@@ -16,10 +18,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String name, String email, String address, List<Order> orders) {
+    public Customer(Long id, String name, String email, String address,String password, List<Order> orders) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.password = password;
         this.address = address;
         this.orders = orders;
     }
@@ -46,6 +49,18 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAddress() {

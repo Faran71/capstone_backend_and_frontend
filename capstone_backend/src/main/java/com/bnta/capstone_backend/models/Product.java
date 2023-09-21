@@ -1,19 +1,39 @@
 package com.bnta.capstone_backend.models;
+import jakarta.persistence.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+
+    @Column
     private String name;
 
+    @Column
     private int price;
 
+    @Column(name = "available_quantity")
     private int availableQuantity;
 
+    @Column(name = "image_url")
     private String imageURL;
+
+    @Column
     private String category;
 
+    @Column
     private String item;
 
+    @Column
     private String description;
 
     public Product() {
