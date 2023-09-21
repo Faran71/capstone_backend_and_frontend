@@ -1,24 +1,40 @@
 package com.bnta.capstone_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "orders")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="order_date_time")
     private LocalDateTime orderDateTime;
 
+
+    //come back to this need clarification
     private enum Status {
         FULFILLED,
         UNFULFILLED,
         PROCESSING
     };
 
+
+    @OneToMany(mappedBy = "orders")
+    @JsonIgnoreProperties
     private List<ProductsOrders> productsOrders;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    @JsonIgnoreProperties({"orders"})
     private Customer customer;
 
     public Order() {
