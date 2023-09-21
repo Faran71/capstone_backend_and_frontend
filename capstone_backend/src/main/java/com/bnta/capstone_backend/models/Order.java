@@ -28,14 +28,13 @@ public class Order {
         PROCESSING
     };
 
-
-    @OneToMany(mappedBy = "orders")
+    @OneToMany(mappedBy = "order")
     @JsonIgnoreProperties
     private List<ProductsOrders> productsOrders;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonIgnoreProperties({"orders"})
+    @JsonIgnoreProperties({"order"})
     private Customer customer;
 
     public Order() {
