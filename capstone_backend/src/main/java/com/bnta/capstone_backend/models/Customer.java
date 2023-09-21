@@ -1,18 +1,32 @@
 package com.bnta.capstone_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
+@Table(name = "customers")
 public class Customer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    @Column
     private String name;
 
+    @Column
     private String email;
 
+    @Column
     private String password;
 
+    @Column
     private String address;
 
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties({"customer"})
     private List<Order> orders;
 
     public Customer() {
