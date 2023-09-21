@@ -1,0 +1,19 @@
+.log-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.log-in-form input {
+    height: 5vh;
+}
+.log-in-form button {
+    height: 5vh;
+}
+
+.log-in {
+    width: 30vw;
+    text-align: center;
+    padding-left: 35vw;
+    padding-top: 30vh;
+}

@@ -13,28 +13,36 @@ const NavBar = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        p: 4, 
+      };
+
     return(
         <div className="nav-bar">
             <button onClick={() => navigate("/")}>Logo</button>
             <button onClick={() => navigate("/Products")}>All Products</button>
             <button onClick={() => navigate("/LogIn")}>Order History</button>
-            <Button id="modal-button" variant= "contained" onClick={handleOpen}>Basket</Button>
+            <button variant= "contained" onClick={handleOpen}>
+                <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>
+            </button>
             <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box >
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Who is?
-                </Typography>
-                {/* <Typography id="petmodal-image">
-                    <img src={`pet_images/pet_${pet.species}3.gif`} />
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {displayMessage()}
-                </Typography> */}
+                <Box sx={style}>
+                    <p>Order Summary</p>
+                    <p>Orders ::::</p>
+                    <button onClick={() => navigate("/LogIn")}>Check out</button>
+                
                 </Box>
             </Modal>
         </div>

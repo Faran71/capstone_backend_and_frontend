@@ -6,4 +6,43 @@
 
 .nav-bar button {
     width: 20vw;
+    height: 5vh;
+    background-color: gray;
 }
+
+.shopping-cart {
+    width: 3vw;
+    height: 4vh;
+    background-color: gray;
+    opacity: 0.5;
+}
+
+
+#modal-modal-description{
+    text-align: justify;
+    align-content: center;
+    font-family: 'Gochi Hand', cursive;
+    font-size: large;
+  }
+  
+  #modal-modal-title {
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;
+    font-size: xx-large;
+  
+  
+  }
+
+  #modal-button{
+    background-color: #E75F5E;
+    font-family: 'Gochi Hand', cursive;
+    border-radius: 15px;
+    text-transform: lowercase;
+    font-size: 20px;
+    
+  }
+  
+  #modal-button:hover {
+    background-color: #93563A;
+  
+  }
