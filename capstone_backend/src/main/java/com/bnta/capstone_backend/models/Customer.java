@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Customer {
 
-    private Long ig;
+    private Long id;
     private String name;
 
     private String email;
@@ -16,20 +16,20 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long ig, String name, String email, String address, List<Order> orders) {
-        this.ig = ig;
+    public Customer(Long id, String name, String email, String address, List<Order> orders) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.orders = orders;
     }
 
-    public Long getIg() {
-        return ig;
+    public Long getId() {
+        return id;
     }
 
-    public void setIg(Long ig) {
-        this.ig = ig;
+    public void setIg(Long id) {
+        this.id = id;
     }
 
     public String getName() {
