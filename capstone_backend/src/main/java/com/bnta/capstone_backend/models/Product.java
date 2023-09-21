@@ -16,7 +16,7 @@ public class Product {
     private Long id;
 
     @Column
-    private String name;
+    private String name; // search menu
 
     @Column
     private int price;
@@ -28,7 +28,7 @@ public class Product {
     private String imageURL;
 
     @Column
-    private String category;
+    private String category; // filter by this have a filter for each category
 
     @Column
     private String item;

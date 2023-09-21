@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "product_orders")
 public class ProductsOrders {
 
     @Id
