@@ -1,18 +1,32 @@
 import { useState } from "react";
 import "./LogInPage.css"
+import { useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const LogInPage = ({customerDetails, currentCustomer, setCurrentCustomer}) => {
+    const navigate = useNavigate();
 
-    const [tempUsername, setTempUsername] = useState("")
+    const [tempEmail, setTempEmail] = useState("")
     const [tempPassword, setTempPassword] = useState("")
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        customerDetails.map((customer) => {
+            if(customer.email === tempEmail && customer.password === tempPassword){
+                setCurrentCustomer(customer);
+                navigate("/OrderHistory")
+            }
+
+        })
+    }
+
     return(
         <div className="log-in">
-            <form className="log-in-form">
+            <form className="log-in-form" onSubmit={handleFormSubmit}>
                 <input type="text" 
-                name="tempUsername"
-                placeholder="Username"
-                value={tempUsername}
-                onChange={(e) => setTempUsername(e.target.value)}
+                name="tempEmail"
+                placeholder="Email"
+                value={tempEmail}
+                onChange={(e) => setTempEmail(e.target.value)}
                 />
                 <input type="password" 
                 name="tempPassword"
@@ -20,7 +34,7 @@ const LogInPage = () => {
                 value={tempPassword}
                 onChange={(e) => setTempPassword(e.target.value)}
                 />
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
     )
