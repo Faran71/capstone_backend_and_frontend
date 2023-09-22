@@ -11,7 +11,7 @@ const Container = () => {
     const [products, setProducts] = useState([]);
     const [order, setOrder] = useState([]);
     const [customerDetails, setCustomerDetails] = useState({});
-    const [currentCustomer, setCurrentCustomer] = useState({});
+    const [currentCustomer, setCurrentCustomer] = useState(null);
     const [allOrders, setAllOrders] = useState({});
     const [category, setCategory] = useState({});
     const [currentProduct, setCurrentProduct] = useState({});
@@ -33,22 +33,24 @@ const Container = () => {
         setAllOrders(data);
     }
 
-    const postOrder = async () => {
-        const response = await fetch(`http://localhost:8080/orders/${currentCustomer.id}`,{
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body:JSON.stringify()
-        })
-        const data = await response.json();
-    }
+    // const postOrder = async () => {
+    //     const response = await fetch(`http://localhost:8080/orders/createOrder/${parseInt(currentCustomer.id)}`,{
+    //         method: "POST",
+    //         headers: {"Content-Type": "application/json"},
+    //         body:JSON.stringify()
+    //     })
+    //     const data = await response.json();
+    // }
 
-    const putOrder = async (productId,orderId, quantitySold) => {
-        const response = await fetch(`http://localhost:8080/productsOrders/${productId}/${orderId}/${quantitySold}`,{
-            method: "PUT",
-            headers: {"Content-Type": "application/json"},
-            body:JSON.stringify()
-        })
-    }
+    // const putOrder = async (productId,orderId, quantitySold) => {
+    //     const response = await fetch(`http://localhost:8080/productsOrders/${productId}/${orderId}/${quantitySold}`,{
+    //         method: "PUT",
+    //         headers: {"Content-Type": "application/json"},
+    //         body:JSON.stringify()
+    //     })
+    //     const data = await response.json();
+
+    // }
 
     useEffect(() => {
         fetchProducts();
@@ -56,9 +58,6 @@ const Container = () => {
         fetchOrders();
     },[])
 
-    useEffect(() => {
-        fetchOrders();
-    },[allOrders])
 
     return (
         <div>
@@ -86,9 +85,8 @@ const Container = () => {
                     order={order} 
                     setOrder={setOrder}
                     products={products}
-                    postOrder={postOrder}
-                    putOrder={putOrder}
-                    allOrders={allOrders}/>} key={5} />
+                    allOrders={allOrders}
+                    currentCustomer={currentCustomer}/>} key={5} />
 
                 </Routes>
             </BrowserRouter>

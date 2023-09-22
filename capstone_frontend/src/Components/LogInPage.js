@@ -15,7 +15,6 @@ const LogInPage = ({customerDetails, currentCustomer, setCurrentCustomer}) => {
                 setCurrentCustomer(customer);
                 navigate("/OrderHistory")
             }
-
         })
     }
 
