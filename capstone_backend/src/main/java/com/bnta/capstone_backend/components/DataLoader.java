@@ -28,11 +28,11 @@ public class DataLoader implements ApplicationRunner {
         // CUSTOMER DATA LOADER
 
         List<Customer> customers = Arrays.asList(
-                new Customer()
-        );
+                new Customer("Jannah", "kittybrownietwirl@outlook.com", "35 Hungry Road, Hungary", "12345" ));
+
 
         for (Customer customer : customers) {
-            Customer customerName = new Customer();
+            Customer customerName = new Customer(customer.getName(), customer.getEmail(), customer.getAddress(), customer.getPassword());
             customerRepository.save(customerName);
         }
 
@@ -92,6 +92,7 @@ public class DataLoader implements ApplicationRunner {
             Product productName = new Product(product.getName(),product.getPrice(),product.getAvailableQuantity(),product.getImageURL(),product.getCategory(),product.getItem(),product.getDescription());
             productRepository.save(productName);
         }
+
 
     }
 

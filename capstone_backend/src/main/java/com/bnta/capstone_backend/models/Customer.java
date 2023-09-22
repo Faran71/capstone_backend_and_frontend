@@ -3,6 +3,7 @@ package com.bnta.capstone_backend.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,15 +30,16 @@ public class Customer {
     @JsonIgnoreProperties({"customer"})
     private List<Order> orders;
 
-    public Customer() {
-    }
 
-    public Customer(String name, String email, String address,String password, List<Order> orders) {
+    public Customer(String name, String email, String address,String password) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
-        this.orders = orders;
+        this.orders = new ArrayList<>();
+    }
+
+    public Customer() {
     }
 
     public String getName() {
