@@ -46,6 +46,10 @@ public class Order {
         this.customer = customer;
     }
 
+    public Long getId() {
+        return id;
+    }
+
 
     public LocalDateTime getOrderDateTime() {
         return orderDateTime;

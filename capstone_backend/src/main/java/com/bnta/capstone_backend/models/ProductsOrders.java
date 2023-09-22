@@ -34,6 +34,14 @@ public class ProductsOrders {
         this.order = order;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public int getQuantitySold() {
         return quantitySold;
     }

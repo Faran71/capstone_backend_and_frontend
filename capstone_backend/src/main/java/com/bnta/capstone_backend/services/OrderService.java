@@ -30,6 +30,7 @@ public class OrderService {
         Customer customer = customerRepository.findById(customerId).get(); // link customer to its order
         newOrder.setCustomer(customer); // set the customer
         newOrder.setOrderDateTime(LocalDateTime.now()); // time the customer will have placed the order
+        orderRepository.save(newOrder);
         return newOrder; // return the order
     }
 

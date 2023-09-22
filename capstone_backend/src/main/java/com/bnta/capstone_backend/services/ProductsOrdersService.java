@@ -28,7 +28,6 @@ public class ProductsOrdersService {
         return this.productsOrdersRepository.findAll();
     }
 //--------------------------------------------------------------------------------------------------------------------------------
-
     public ProductsOrders addToProdOrders(Long productId, Long orderId, int quantitySold){
         
         ProductsOrders newProdOrder = new ProductsOrders(); // create a new productOrder
@@ -39,10 +38,12 @@ public class ProductsOrdersService {
         Order order = orderRepository.findById(orderId).get(); // link order to its product   
         newProdOrder.setOrder(order); //  set the order
 
+        //------------------------------------------------------------------------------------------------------------------------
+        // DO A LINE TO REDUCE THE QUANITIYSOLD FROM AVAILABLE QUANTITY IN PRODUCT TABLE
+        //------------------------------------------------------------------------------------------------------------------------
+
         productsOrdersRepository.save(newProdOrder); // save it to database
         return newProdOrder; // return the productOrder
     }
-
-
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 }
