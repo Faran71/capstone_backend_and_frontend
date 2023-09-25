@@ -51,7 +51,7 @@ const NavBar = ({order, setOrder}) => {
         <div className="nav-bar">
             <button onClick={() => navigate("/")}>Logo</button>
             <button onClick={() => navigate("/Products")}>All Products</button>
-            <button onClick={() => navigate("/LogIn")}>Order History</button>
+            <button onClick={() => navigate("/LogIn")}>Account</button>
             <button variant= "contained" onClick={handleOpen}>
                 <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>
             </button>
