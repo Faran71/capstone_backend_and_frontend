@@ -1,6 +1,8 @@
 package com.bnta.capstone_backend.controllers;
 
 
+import com.bnta.capstone_backend.authentication.CustomerSecurityConfiguration;
+import com.bnta.capstone_backend.authentication.LoginForm;
 import com.bnta.capstone_backend.models.Customer;
 import com.bnta.capstone_backend.models.CustomerDTO;
 import com.bnta.capstone_backend.services.CustomerService;
@@ -30,4 +32,9 @@ public class CustomerController {
         return new ResponseEntity(customerService.findAllCustomers(), HttpStatus.CREATED);
     }
 
+    @PostMapping("/authenticate")
+    public ResponseEntity<Customer> authenticateCustomer(@RequestBody LoginForm loginForm) {
+        Customer checkCustomer = customerService.checkCredentials(loginForm.getEmail(),loginForm.getPassword());
+        return checkCustomer != null ? new ResponseEntity<>(checkCustomer,HttpStatus.ACCEPTED) : new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
 }

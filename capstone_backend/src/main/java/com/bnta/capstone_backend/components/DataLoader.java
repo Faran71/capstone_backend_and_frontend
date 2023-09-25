@@ -3,13 +3,12 @@ package com.bnta.capstone_backend.components;
 import com.bnta.capstone_backend.models.*;
 import com.bnta.capstone_backend.repositories.CustomerRepository;
 import com.bnta.capstone_backend.repositories.ProductRepository;
-import com.bnta.capstone_backend.repositories.ProductsOrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import javax.swing.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,6 +21,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
@@ -32,7 +34,8 @@ public class DataLoader implements ApplicationRunner {
 
 
         for (Customer customer : customers) {
-            Customer customerName = new Customer(customer.getName(), customer.getEmail(), customer.getAddress(), customer.getPassword());
+            String encryptPassword = passwordEncoder.encode(customer.getPassword()); // hash password for security
+            Customer customerName = new Customer(customer.getName(), customer.getEmail(), customer.getAddress(), encryptPassword);
             customerRepository.save(customerName);
         }
 
@@ -61,7 +64,7 @@ public class DataLoader implements ApplicationRunner {
                         "https://images.unsplash.com/photo-1547043736-b2247cb34b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80",
                         "Home",
                         "Chair",
-                        "Smoothest swivel on a chair known to mankind delived by the main man faran himself"),
+                        "Smoothest swivel on a chair known to mankind delivered by the main man Faran himself"),
 
                 new Product("The Kite Runner",
                         15,
