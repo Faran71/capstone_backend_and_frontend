@@ -1,15 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import "./NavBar.css"
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { useEffect, useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({order, setOrder}) => {
     const navigate = useNavigate();
 
-    const [open, setOpen] = React.useState(false);
+    const [modalProducts, setModalProducts] = useState([]);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -18,11 +20,32 @@ const NavBar = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: 600,
         bgcolor: 'background.paper',
         boxShadow: 24,
         p: 4, 
       };
+
+    const deleteOrder = (e) => {
+        setOrder(temp => {
+            return temp.filter(country => country!== e);
+        })
+    }
+    
+    useEffect(() => {
+        const displayOrders = order.map((item) => {
+            return(
+                <div className="modalproduct">
+                    <img src={item.product.imageURL}/>
+                    <p>{item.product.name} - {item.quantitySold}</p>
+                    <button onClick={() => deleteOrder(item)}><img src ="https://www.freeiconspng.com/uploads/delete-x-square-button-png-3.png"/></button>
+                </div>
+            )
+        })
+        setModalProducts(displayOrders);
+    },[order])
+    
+      
 
     return(
         <div className="nav-bar">
@@ -40,10 +63,12 @@ const NavBar = () => {
             >
                 <Box sx={style}>
                     <p>Order Summary</p>
-                    <p>Orders ::::</p>
+                    <div className="modal">
+                    {modalProducts}
+                    </div>
                     <button onClick={() => navigate("/LogIn")}>Check out</button>
-                
                 </Box>
+
             </Modal>
         </div>
     )

@@ -46,3 +46,29 @@
     background-color: #93563A;
   
   }
+
+  .individual-order img {
+    height: 50px;
+    width: 50px;
+
+  }
+
+.modal {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.modalproduct img {
+  width: 50px;
+  height: 50px;
+}
+
+.modalproduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+

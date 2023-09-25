@@ -1,31 +1,21 @@
 import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import { useScroll } from "framer-motion";
+import "./OrderHistoryPage.css";
 
 const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}) => {
 
     const [isClicked, setIsClicked] = useState(false);
     const displayOrders = order.map((item) => {
-        const getProduct = products.map((temp) => {
-            if (temp.id === item.productId){
-                return(
-                    <div>
-                       <p>{temp.name}</p>
-                        <p>{item.quantitySold}</p> 
-                    </div>
-                ) 
-            }
-        })
         return(
-            <div>
-                {getProduct}
+            <div className="modalproduct">
+                    <img src={item.product.imageURL}/>
+                    <p>{item.product.name} - {item.quantitySold}</p>
+                    <p> Total = £{item.quantitySold*item.product.price}</p>
             </div>
         )
     })
 
-    const postOrder = async () => {
-        
-    }
 
     const putOrder = async () => {
         const newOrderResponse = await fetch(`http://localhost:8080/orders/createOrder/${currentCustomer.id}`,{
@@ -35,14 +25,12 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
         const newOrder = await newOrderResponse.json();
 
         order.forEach(async (item) => {
-            const response = await fetch(`http://localhost:8080/productsOrders/${item.productId}/${newOrder.id}/${item.quantitySold}`,{
+            const response = await fetch(`http://localhost:8080/productsOrders/${item.product.id}/${newOrder.id}/${item.quantitySold}`,{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             })
         })
         
-
-
     }
 
     const handleSubmit = () => {
@@ -50,14 +38,11 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
 
     }
 
-    // useEffect(() => {
-    //     if(currentCustomer){
-
-    //     }
-    // },[currentCustomer])
     return(
         <div>
-            <NavBar />
+            <NavBar order={order} products={products}
+            setOrder={setOrder}
+            />
             <div>
                 <h1>Order:</h1>
                 {displayOrders}
