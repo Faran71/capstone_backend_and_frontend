@@ -24,6 +24,7 @@ public class ProductOrdersController {
     @PutMapping(value = "/{productId}/{orderId}/{quantitySold}")
     public ResponseEntity<ProductsOrders> addToProdOrders(@PathVariable Long productId, @PathVariable Long orderId, @PathVariable int quantitySold){ // add order to productOrders
        ProductsOrders newProdOrder =  productsOrdersService.addToProdOrders(productId, orderId, quantitySold);
-        return new ResponseEntity<>(newProdOrder, HttpStatus.CREATED);
+//        return new ResponseEntity<>(newProdOrder, HttpStatus.CREATED);
+        return newProdOrder != null ? new ResponseEntity<>(newProdOrder,HttpStatus.ACCEPTED) : new ResponseEntity<>(HttpStatus.IM_USED);
     }
 }

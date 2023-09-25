@@ -29,21 +29,27 @@ public class ProductsOrdersService {
     }
 //--------------------------------------------------------------------------------------------------------------------------------
     public ProductsOrders addToProdOrders(Long productId, Long orderId, int quantitySold){
-        
-        ProductsOrders newProdOrder = new ProductsOrders(); // create a new productOrder
+
         Product product = productRepository.findById(productId).get(); // link product to its order
-        newProdOrder.setProduct(product); // set the product
-        newProdOrder.setQuantitySold(quantitySold); // set the quantity sold
 
-        Order order = orderRepository.findById(orderId).get(); // link order to its product   
-        newProdOrder.setOrder(order); //  set the order
+        if(product.getAvailableQuantity()>=quantitySold){
+            ProductsOrders newProdOrder = new ProductsOrders(); // create a new productOrder
 
-        //------------------------------------------------------------------------------------------------------------------------
-        // DO A LINE TO REDUCE THE QUANITIYSOLD FROM AVAILABLE QUANTITY IN PRODUCT TABLE
-        //------------------------------------------------------------------------------------------------------------------------
+//          Product product = productRepository.findById(productId).get(); // link product to its order
 
-        productsOrdersRepository.save(newProdOrder); // save it to database
-        return newProdOrder; // return the productOrder
+            newProdOrder.setProduct(product); // set the product
+            newProdOrder.setQuantitySold(quantitySold); // set the quantity sold
+
+            Order order = orderRepository.findById(orderId).get(); // link order to its product
+            newProdOrder.setOrder(order); //  set the order
+
+            product.setAvailableQuantity(product.getAvailableQuantity() - quantitySold);
+
+            productsOrdersRepository.save(newProdOrder); // save it to database
+            return newProdOrder; // return the productOrder
+
+        }
+        return null;
     }
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 }
