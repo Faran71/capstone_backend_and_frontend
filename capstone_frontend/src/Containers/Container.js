@@ -66,6 +66,7 @@ const Container = () => {
                     products={products}/>
                     <Route path="/LogIn" element={<LogInPage 
                     customerDetails={customerDetails}
+                    setCustomerDetails={setCustomerDetails}
                     currentCustomer={currentCustomer}
                     setCurrentCustomer={setCurrentCustomer}/>} key={4} />
                     <Route path="/OrderHistory" element={<OrderHistoryPage 

@@ -17,3 +17,9 @@
     padding-left: 35vw;
     padding-top: 30vh;
 }
+
+.registration {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
