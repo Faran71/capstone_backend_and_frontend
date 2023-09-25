@@ -23,9 +23,9 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
         )
     })
 
-    const postOrder = async () => {
+    // const postOrder = async () => {
         
-    }
+    // }
 
     const putOrder = async () => {
         const newOrderResponse = await fetch(`http://localhost:8080/orders/createOrder/${currentCustomer.id}`,{
@@ -41,8 +41,6 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
             })
         })
         
-
-
     }
 
     const handleSubmit = () => {
@@ -57,7 +55,7 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
     // },[currentCustomer])
     return(
         <div>
-            <NavBar />
+            <NavBar order={order} products={products}/>
             <div>
                 <h1>Order:</h1>
                 {displayOrders}

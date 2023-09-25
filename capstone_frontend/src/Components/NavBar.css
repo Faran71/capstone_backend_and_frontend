@@ -46,3 +46,19 @@
     background-color: #93563A;
   
   }
+
+  .individual-order img {
+    height: 50px;
+    width: 50px;
+
+  }
+
+  .individual-order {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .all-orders {
+    display: flex;
+    flex-direction: row;
+  }

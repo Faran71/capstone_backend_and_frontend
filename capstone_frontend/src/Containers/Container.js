@@ -33,25 +33,6 @@ const Container = () => {
         setAllOrders(data);
     }
 
-    // const postOrder = async () => {
-    //     const response = await fetch(`http://localhost:8080/orders/createOrder/${parseInt(currentCustomer.id)}`,{
-    //         method: "POST",
-    //         headers: {"Content-Type": "application/json"},
-    //         body:JSON.stringify()
-    //     })
-    //     const data = await response.json();
-    // }
-
-    // const putOrder = async (productId,orderId, quantitySold) => {
-    //     const response = await fetch(`http://localhost:8080/productsOrders/${productId}/${orderId}/${quantitySold}`,{
-    //         method: "PUT",
-    //         headers: {"Content-Type": "application/json"},
-    //         body:JSON.stringify()
-    //     })
-    //     const data = await response.json();
-
-    // }
-
     useEffect(() => {
         fetchProducts();
         fetchCustomers();
@@ -63,7 +44,9 @@ const Container = () => {
         <div>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<LandingPage />} key={1} />
+                    <Route path="/" element={<LandingPage 
+                    order={order}
+                    products={products}/>} key={1} />
                     <Route path="/Products" element={<ProductsPage 
                     products={products} 
                     order={order}
@@ -76,7 +59,9 @@ const Container = () => {
                     <Route path="/OneProduct" element={<OneProductPage 
                     currentProduct={currentProduct}
                     order={order}
-                    setOrder={setOrder}/>} key={3} />
+                    setOrder={setOrder}/>} key={3}
+                    order={order} 
+                    products={products}/>
                     <Route path="/LogIn" element={<LogInPage 
                     customerDetails={customerDetails}
                     currentCustomer={currentCustomer}

@@ -1,12 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import "./NavBar.css"
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { useEffect } from "react";
 
-const NavBar = () => {
+const NavBar = ({order,products}) => {
     const navigate = useNavigate();
 
     const [open, setOpen] = React.useState(false);
@@ -18,11 +19,50 @@ const NavBar = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: 600,
         bgcolor: 'background.paper',
         boxShadow: 24,
         p: 4, 
       };
+      const displayProducts = () => {
+        if(order.length !== 0){
+            const displayOrders = order.map((item) => {
+                const getProduct = products.map((temp) => {
+                    if (temp.id === item.productId){
+                        return(
+                            <div>
+                               <p>{temp.name}</p>
+                                <p>{item.quantitySold}</p> 
+                            </div>
+                        ) 
+                    }
+                })
+                return(
+                    <div>
+                        {getProduct}
+                    </div>
+                )
+            })
+            return(
+                {displayOrders}
+            )
+        }
+      }
+      
+    //   const displayProducts = order.map((item) => {
+    //     const product = products.find((temp) => temp.id === item.productId);
+    //     if (product) {
+    //         return (
+    //         <div key={item.productId}>
+    //             <p>{product.name}</p>
+    //             <p>{item.quantitySold}</p>
+    //         </div>
+    //         );
+    //     }
+    //     return null;
+    //   })
+    
+      
 
     return(
         <div className="nav-bar">
@@ -40,7 +80,7 @@ const NavBar = () => {
             >
                 <Box sx={style}>
                     <p>Order Summary</p>
-                    <p>Orders ::::</p>
+                    {displayProducts}
                     <button onClick={() => navigate("/LogIn")}>Check out</button>
                 
                 </Box>

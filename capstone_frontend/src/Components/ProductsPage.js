@@ -11,7 +11,7 @@ const ProductsPage = ({products, order, category, currentProduct, setOrder, setC
     })
     return(
         <div>
-            <NavBar />
+            <NavBar order={order} products={products}/>
             <div className="display">
                 {displayProducts}
             </div>
