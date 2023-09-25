@@ -5,12 +5,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const NavBar = ({order,products}) => {
+const NavBar = ({order}) => {
     const navigate = useNavigate();
 
-    const [open, setOpen] = React.useState(false);
+    const [modalProducts, setModalProducts] = useState([]);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -24,43 +25,20 @@ const NavBar = ({order,products}) => {
         boxShadow: 24,
         p: 4, 
       };
-      const displayProducts = () => {
-        if(order.length !== 0){
-            const displayOrders = order.map((item) => {
-                const getProduct = products.map((temp) => {
-                    if (temp.id === item.productId){
-                        return(
-                            <div>
-                               <p>{temp.name}</p>
-                                <p>{item.quantitySold}</p> 
-                            </div>
-                        ) 
-                    }
-                })
-                return(
-                    <div>
-                        {getProduct}
-                    </div>
-                )
-            })
-            return(
-                {displayOrders}
-            )
-        }
-      }
+
       
-    //   const displayProducts = order.map((item) => {
-    //     const product = products.find((temp) => temp.id === item.productId);
-    //     if (product) {
-    //         return (
-    //         <div key={item.productId}>
-    //             <p>{product.name}</p>
-    //             <p>{item.quantitySold}</p>
-    //         </div>
-    //         );
-    //     }
-    //     return null;
-    //   })
+    
+    useEffect(() => {
+        const displayOrders = order.map((item) => {
+            return(
+                <div>
+                    {/* <img src={item.product.imageURL}/> */}
+                    <p>{item.product.name} - {item.quantitySold}</p>
+                </div>
+            )
+        })
+        setModalProducts(displayOrders);
+    },[order])
     
       
 
@@ -80,10 +58,10 @@ const NavBar = ({order,products}) => {
             >
                 <Box sx={style}>
                     <p>Order Summary</p>
-                    {displayProducts}
+                    {modalProducts}
                     <button onClick={() => navigate("/LogIn")}>Check out</button>
-                
                 </Box>
+
             </Modal>
         </div>
     )

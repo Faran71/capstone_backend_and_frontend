@@ -10,7 +10,7 @@ const OneProductPage = ({currentProduct, order, setOrder, products}) => {
         event.preventDefault();
         if(tempQuantity!==""){
             let tempOrder = {
-                productId : currentProduct.id,
+                product: currentProduct,
                 quantitySold: tempQuantity,
             }
             setOrder([...order,tempOrder]);
