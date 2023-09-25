@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import { useScroll } from "framer-motion";
+import "./OrderHistoryPage.css";
 
 const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}) => {
 
     const [isClicked, setIsClicked] = useState(false);
     const displayOrders = order.map((item) => {
         return(
-            <div>
-                <p>{item.product.name}-{item.quantitySold}</p>
-                
+            <div className="modalproduct">
+                    <img src={item.product.imageURL}/>
+                    <p>{item.product.name} - {item.quantitySold}</p>
+                    <p> Total = £{item.quantitySold*item.product.price}</p>
             </div>
         )
     })
 
-    // const postOrder = async () => {
-        
-    // }
 
     const putOrder = async () => {
         const newOrderResponse = await fetch(`http://localhost:8080/orders/createOrder/${currentCustomer.id}`,{
@@ -41,7 +40,9 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
 
     return(
         <div>
-            <NavBar order={order} products={products}/>
+            <NavBar order={order} products={products}
+            setOrder={setOrder}
+            />
             <div>
                 <h1>Order:</h1>
                 {displayOrders}

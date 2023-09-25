@@ -46,7 +46,9 @@ const Container = () => {
                 <Routes>
                     <Route path="/" element={<LandingPage 
                     order={order}
-                    products={products}/>} key={1} />
+                    products={products}
+                    setOrder={setOrder}
+                    />} key={1} />
                     <Route path="/Products" element={<ProductsPage 
                     products={products} 
                     order={order}

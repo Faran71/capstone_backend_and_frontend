@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from "react";
 
-const NavBar = ({order}) => {
+const NavBar = ({order, setOrder}) => {
     const navigate = useNavigate();
 
     const [modalProducts, setModalProducts] = useState([]);
@@ -26,14 +26,19 @@ const NavBar = ({order}) => {
         p: 4, 
       };
 
-      
+    const deleteOrder = (e) => {
+        setOrder(temp => {
+            return temp.filter(country => country!== e);
+        })
+    }
     
     useEffect(() => {
         const displayOrders = order.map((item) => {
             return(
-                <div>
-                    {/* <img src={item.product.imageURL}/> */}
+                <div className="modalproduct">
+                    <img src={item.product.imageURL}/>
                     <p>{item.product.name} - {item.quantitySold}</p>
+                    <button onClick={() => deleteOrder(item)}><img src ="https://www.freeiconspng.com/uploads/delete-x-square-button-png-3.png"/></button>
                 </div>
             )
         })
@@ -58,7 +63,9 @@ const NavBar = ({order}) => {
             >
                 <Box sx={style}>
                     <p>Order Summary</p>
+                    <div className="modal">
                     {modalProducts}
+                    </div>
                     <button onClick={() => navigate("/LogIn")}>Check out</button>
                 </Box>
 

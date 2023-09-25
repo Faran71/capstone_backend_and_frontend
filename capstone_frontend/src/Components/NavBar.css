@@ -53,12 +53,22 @@
 
   }
 
-  .individual-order {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+.modal {
+  display: flex;
+  flex-direction: column;
+}
 
-  .all-orders {
-    display: flex;
-    flex-direction: row;
-  }
+
+
+.modalproduct img {
+  width: 50px;
+  height: 50px;
+}
+
+.modalproduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+

@@ -19,7 +19,9 @@ const OneProductPage = ({currentProduct, order, setOrder, products}) => {
     
     return(
         <div>
-            <NavBar order={order} products={products}/>
+            <NavBar order={order} products={products}
+            setOrder={setOrder}
+            />
             <div className="oneproduct">
                 <div>
                     <h2>{currentProduct.name}</h2>
@@ -27,7 +29,7 @@ const OneProductPage = ({currentProduct, order, setOrder, products}) => {
                     <p>Price: £{currentProduct.price}</p>
                     <form onSubmit={handleFormSubmit}>
                         <input type="number" 
-                        min={0}
+                        min={1}
                         name="quantity"
                         placeholder="Quantity"
                         value={tempQuantity}
