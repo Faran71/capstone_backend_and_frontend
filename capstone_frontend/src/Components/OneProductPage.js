@@ -2,7 +2,8 @@ import { useState } from "react";
 import NavBar from "./NavBar";
 import "./OneProductPage.css"
 
-const OneProductPage = ({currentProduct, order, setOrder, products}) => {
+
+const OneProductPage = ({currentProduct, order, setOrder, products, currentCustomer, setCurrentCustomer}) => {
 
     const [tempQuantity, setTempQuantity] = useState("");
 
@@ -19,8 +20,11 @@ const OneProductPage = ({currentProduct, order, setOrder, products}) => {
     
     return(
         <div>
-            <NavBar order={order} products={products}
+            <NavBar order={order} 
+            products={products}
             setOrder={setOrder}
+            currentCustomer={currentCustomer}
+            setCurrentCustomer={setCurrentCustomer}
             />
             <div className="oneproduct">
                 <div>

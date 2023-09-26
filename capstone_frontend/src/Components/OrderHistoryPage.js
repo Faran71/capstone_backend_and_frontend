@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import { useScroll } from "framer-motion";
 import "./OrderHistoryPage.css";
 
-const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}) => {
+const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer, setCurrentCustomer}) => {
 
     const [isClicked, setIsClicked] = useState(false);
     const displayOrders = order.map((item) => {
@@ -35,13 +35,17 @@ const OrderHistoryPage = ({order, setOrder, products, allOrders,currentCustomer}
 
     const handleSubmit = () => {
         putOrder();
+        setOrder([]);
 
     }
 
     return(
         <div>
-            <NavBar order={order} products={products}
+            <NavBar order={order} 
+            products={products}
             setOrder={setOrder}
+            currentCustomer={currentCustomer}
+            setCurrentCustomer={setCurrentCustomer}
             />
             <div>
                 <h1>Order:</h1>
