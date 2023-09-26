@@ -3,7 +3,7 @@ import ProductDisplay from "./ProductDisplay";
 import "./ProductsPage"
 import { useNavigate } from "react-router-dom";
 
-const ProductsPage = ({products, order, category,  setOrder, setCategory, setCurrentProduct, currentCustomer, setCurrentCustomer}) => {
+const ProductsPage = ({products, order, category,  setOrder, setCategory,filterProducts,setFilterProducts,setCurrentProduct, currentCustomer, setCurrentCustomer}) => {
     const navigate = useNavigate();
 
     const displayProducts = products.map((product) => {
@@ -16,6 +16,7 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory, setCur
             setOrder={setOrder}
             currentCustomer={currentCustomer}
             setCurrentCustomer={setCurrentCustomer}
+            setFilterProducts={setFilterProducts}
             />
             <div className="display">
                 {displayProducts}

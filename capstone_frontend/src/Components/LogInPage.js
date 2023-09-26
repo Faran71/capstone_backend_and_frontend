@@ -43,24 +43,6 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
     const handleFormSubmit = (event) => {
         event.preventDefault();
         postLogInCustomer(tempEmail, tempPassword);
-        // if (currentCustomer){
-        //     fetchCustomers()
-        //     navigate("/OrderHistory");
-        //     // setIsWrong(true);
-        // } 
-        // else {
-        //     // setIsWrong(false);
-        // }
-
-        // customerDetails.map((customer) => {
-        //     if(customer.email === tempEmail && customer.password === tempPassword){
-        //         setCurrentCustomer(customer);
-        //         navigate("/OrderHistory");
-        //         setIsWrong(true);
-        //     } else {
-        //         setIsWrong(false);
-        //     }
-        // })
     }
 
     useEffect(() => {

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 const Container = () => {
 
     const [products, setProducts] = useState([]);
+    const [filterProducts,setFilterProducts] = useState([])
     const [order, setOrder] = useState([]);
     const [customerDetails, setCustomerDetails] = useState({});
     const [currentCustomer, setCurrentCustomer] = useState(null);
@@ -20,6 +21,7 @@ const Container = () => {
         const response = await fetch("http://localhost:8080/products");
         const data = await response.json()
         setProducts(data);
+        setFilterProducts(data)
     }
 
     const fetchCustomers = async () => {
@@ -53,7 +55,10 @@ const Container = () => {
                     products={products}
                     setOrder={setOrder}
                     currentCustomer={currentCustomer}
+                    filterProducts={filterProducts}
                     setCurrentCustomer={setCurrentCustomer}
+                    setProducts={setProducts}
+                    setFilterProducts={setFilterProducts}
                     />} key={1} />
                     <Route path="/Products" element={<ProductsPage 
                     products={products} 
@@ -62,9 +67,11 @@ const Container = () => {
                     category={category}
                     setCategory={setCategory}
                     currentProduct={currentProduct}
+                    filterProducts={filterProducts}
                     setCurrentProduct={setCurrentProduct}
                     currentCustomer={currentCustomer}
                     setCurrentCustomer={setCurrentCustomer}
+                    setFilterProducts={setFilterProducts}
                     />} key={2} />
                     <Route path="/OneProduct" element={<OneProductPage 
                     currentProduct={currentProduct}
@@ -73,6 +80,8 @@ const Container = () => {
                     products={products}
                     currentCustomer={currentCustomer}
                     setCurrentCustomer={setCurrentCustomer}
+                    filterProducts={filterProducts}
+                    setFilterProducts={setFilterProducts}
                     />} key={3}
                     />
                     <Route path="/LogIn" element={<LogInPage 
@@ -87,6 +96,8 @@ const Container = () => {
                     products={products}
                     allOrders={allOrders}
                     currentCustomer={currentCustomer}
+                    filterProducts={filterProducts}
+                    setFilterProducts={setFilterProducts}
                     setCurrentCustomer={setCurrentCustomer}/>} key={5} />
 
                 </Routes>
