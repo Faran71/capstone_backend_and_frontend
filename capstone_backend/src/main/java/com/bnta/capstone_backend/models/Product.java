@@ -36,10 +36,13 @@ public class Product {
     @Column(length = 1000)
     private String description;
 
+    @Column
+    private int rating;
+
     public Product() {
     }
 
-    public Product(String name, int price, int availableQuantity, String imageURL, String category, String item, String description) {
+    public Product(String name, int price, int availableQuantity, String imageURL, String category, String item, String description,int rating) {
         this.name = name;
         this.price = price;
         this.availableQuantity = availableQuantity;
@@ -47,6 +50,7 @@ public class Product {
         this.category = category;
         this.item = item;
         this.description = description;
+        this.rating = rating;
     }
 
     public Long getId() {
@@ -111,6 +115,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
 

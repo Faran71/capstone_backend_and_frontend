@@ -19,10 +19,12 @@ public class ProductDTO {
 
     private String description;
 
+    private int rating;
+
     public ProductDTO() {
     }
 
-    public ProductDTO(String name, int price, int availableQuantity, String imageURL, String category, String item, String description) {
+    public ProductDTO(String name, int price, int availableQuantity, String imageURL, String category, String item, String description, int rating) {
         this.name = name;
         this.price = price;
         this.availableQuantity = availableQuantity;
@@ -30,6 +32,7 @@ public class ProductDTO {
         this.category = category;
         this.item = item;
         this.description = description;
+        this.rating = rating;
     }
 
     public String getName() {
@@ -86,5 +89,13 @@ public class ProductDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

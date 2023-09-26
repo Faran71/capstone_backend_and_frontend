@@ -36,5 +36,17 @@ public class ProductController {
 
     // filter for category
 
+    @GetMapping("/{rating}")
+    public ResponseEntity<List<Product>> getProductByRating(@PathVariable int rating) {
+        List<Product> products = productService.getProductByRating(rating);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/{price}")
+    public ResponseEntity<List<Product>> getProductByPrice(@PathVariable int price) {
+        List<Product> products = productService.getProductByPrice(price);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
 
 }
