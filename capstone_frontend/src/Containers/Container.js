@@ -5,11 +5,12 @@ import OneProductPage from "../Components/OneProductPage";
 import LogInPage from "../Components/LogInPage"
 import OrderHistoryPage from "../Components/OrderHistoryPage"
 import { useEffect, useState } from "react";
+import { filledInputClasses } from "@mui/material";
 
 const Container = () => {
 
     const [products, setProducts] = useState([]);
-    const [filterProducts,setFilterProducts] = useState([])
+    const [originalProducts,setOriginalProducts] = useState([])
     const [order, setOrder] = useState([]);
     const [customerDetails, setCustomerDetails] = useState({});
     const [currentCustomer, setCurrentCustomer] = useState(null);
@@ -21,7 +22,7 @@ const Container = () => {
         const response = await fetch("http://localhost:8080/products");
         const data = await response.json()
         setProducts(data);
-        setFilterProducts(data)
+        setOriginalProducts(data);
     }
 
     const fetchCustomers = async () => {
@@ -55,33 +56,36 @@ const Container = () => {
                     products={products}
                     setOrder={setOrder}
                     currentCustomer={currentCustomer}
-                    filterProducts={filterProducts}
+                    originalProducts={originalProducts}
+                    setOriginalProducts={setOriginalProducts}
                     setCurrentCustomer={setCurrentCustomer}
                     setProducts={setProducts}
-                    setFilterProducts={setFilterProducts}
+                    
                     />} key={1} />
                     <Route path="/Products" element={<ProductsPage 
                     products={products} 
+                    setProducts={setProducts}
                     order={order}
                     setOrder={setOrder}
                     category={category}
                     setCategory={setCategory}
                     currentProduct={currentProduct}
-                    filterProducts={filterProducts}
                     setCurrentProduct={setCurrentProduct}
                     currentCustomer={currentCustomer}
                     setCurrentCustomer={setCurrentCustomer}
-                    setFilterProducts={setFilterProducts}
+                    originalProducts={originalProducts}
+                    setOriginalProducts={setOriginalProducts}
                     />} key={2} />
                     <Route path="/OneProduct" element={<OneProductPage 
                     currentProduct={currentProduct}
                     order={order}
                     setOrder={setOrder}
                     products={products}
+                    setProducts={setProducts}
                     currentCustomer={currentCustomer}
                     setCurrentCustomer={setCurrentCustomer}
-                    filterProducts={filterProducts}
-                    setFilterProducts={setFilterProducts}
+                    originalProducts={originalProducts}
+                    setOriginalProducts={setOriginalProducts}
                     />} key={3}
                     />
                     <Route path="/LogIn" element={<LogInPage 
@@ -94,10 +98,11 @@ const Container = () => {
                     order={order} 
                     setOrder={setOrder}
                     products={products}
+                    setProducts={setProducts}
                     allOrders={allOrders}
                     currentCustomer={currentCustomer}
-                    filterProducts={filterProducts}
-                    setFilterProducts={setFilterProducts}
+                    originalProducts={originalProducts}
+                    setOriginalProducts={setOriginalProducts}
                     setCurrentCustomer={setCurrentCustomer}/>} key={5} />
 
                 </Routes>
