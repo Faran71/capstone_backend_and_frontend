@@ -21,4 +21,18 @@ public class ProductService {
     public List<Product> getProductByCategory(String category) {
         return productRepository.findProductsByCategory(category);
     }
+
+    // filter get product by rating
+    public List<Product> getProductByRating(int rating){
+        return productRepository.findProductByRating(rating);
+    }
+
+    // filter get product by price
+    public List<Product> getProductByPrice(int price){
+        return productRepository.findProductsByPrice(price);
+    }
+
+    // search bar
+        // when searching we need it to search names, descriptions, maybe even category
+
 }
