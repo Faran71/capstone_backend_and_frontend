@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from "react";
 
-const NavBar = ({products,order, setOrder, setFilterProducts,currentCustomer, setCurrentCustomer}) => {
+const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts,currentCustomer, setCurrentCustomer ,setProducts}) => {
     const navigate = useNavigate();
 
     const [modalProducts, setModalProducts] = useState([]);
@@ -59,15 +59,17 @@ const NavBar = ({products,order, setOrder, setFilterProducts,currentCustomer, se
         }
       }
 
+      const fullProducts = () => {
+        setProducts(originalProducts)
+      }
       
 
     return(
         <div className="nav-bar">
             <button onClick={() => navigate("/")}>Logo</button>
             <button onClick={() => {
-                setFilterProducts(products)
+                {fullProducts()}
                 navigate("/Products")
-
             }}>All Products</button>
             
             {ifLoggedIn()}

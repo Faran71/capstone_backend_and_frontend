@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import { useScroll } from "framer-motion";
 import "./OrderHistoryPage.css";
 
-const OrderHistoryPage = ({order, setOrder, products,filterProducts,setFilterProducts, allOrders,currentCustomer, setCurrentCustomer}) => {
+const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOriginalProducts, setProducts, allOrders,currentCustomer, setCurrentCustomer}) => {
 
     const [isClicked, setIsClicked] = useState(false);
     const displayOrders = order.map((item) => {
@@ -46,7 +46,9 @@ const OrderHistoryPage = ({order, setOrder, products,filterProducts,setFilterPro
             setOrder={setOrder}
             currentCustomer={currentCustomer}
             setCurrentCustomer={setCurrentCustomer}
-            setFilterProducts={setFilterProducts}
+            originalProducts={originalProducts}
+            setOriginalProducts={setOriginalProducts}
+            setProducts={setProducts}
             />
             <div>
                 <h1>Order:</h1>

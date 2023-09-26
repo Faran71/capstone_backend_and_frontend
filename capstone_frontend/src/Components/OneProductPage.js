@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import "./OneProductPage.css"
 
 
-const OneProductPage = ({currentProduct, order, setOrder,filterProducts,setFilterProducts, products, currentCustomer, setCurrentCustomer}) => {
+const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setProducts, setOriginalProducts, products, currentCustomer, setCurrentCustomer}) => {
 
     const [tempQuantity, setTempQuantity] = useState("");
 
@@ -25,7 +25,9 @@ const OneProductPage = ({currentProduct, order, setOrder,filterProducts,setFilte
             setOrder={setOrder}
             currentCustomer={currentCustomer}
             setCurrentCustomer={setCurrentCustomer}
-            setFilterProducts={setFilterProducts}
+            originalProducts={originalProducts}
+            setOriginalProducts={setOriginalProducts}
+            setProducts={setProducts}
             />
             <div className="oneproduct">
                 <div>
