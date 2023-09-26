@@ -2,6 +2,7 @@ import CategoriesBox from "./CategoriesBox";
 import NavBar from "./NavBar";
 import "./LandingPage.css";
 import Carousel from "./Carousel";
+import images from "../images";
 
 
 
