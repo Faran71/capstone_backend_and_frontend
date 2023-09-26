@@ -47,19 +47,19 @@ const NavBar = ({order, setOrder, currentCustomer, setCurrentCustomer}) => {
     
       const ifLoggedIn = () => {
         if(currentCustomer){
-            return <button onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
+            return(
+                <div>
+                    <button onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
+                    <button  onClick={() => setCurrentCustomer(null)}>LogOut</button>
+                </div>
+                 )
+            
         } else {
             return <button onClick={() => navigate("/LogIn")}>Log In / Register</button>
         }
       }
 
-      const [hideLogOutButton, setHideLogOutButton] = useState(true)
       
-      useEffect(() => {
-        if(currentCustomer){
-            setHideLogOutButton(false)
-        }
-      },[currentCustomer])
 
     return(
         <div className="nav-bar">
@@ -68,7 +68,7 @@ const NavBar = ({order, setOrder, currentCustomer, setCurrentCustomer}) => {
             
             {ifLoggedIn()}
 
-            <button hidden={hideLogOutButton} onClick={() => setCurrentCustomer(null)}>LogOut</button>
+
 
             <button variant= "contained" onClick={handleOpen}>
                 <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>

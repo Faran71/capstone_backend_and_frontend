@@ -9,7 +9,7 @@ const OneProductPage = ({currentProduct, order, setOrder, products, currentCusto
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if(tempQuantity!==""){
+        if(tempQuantity!=="" && currentProduct.availableQuantity !== 0){
             let tempOrder = {
                 product: currentProduct,
                 quantitySold: tempQuantity,
