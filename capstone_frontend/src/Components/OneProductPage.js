@@ -2,13 +2,14 @@ import { useState } from "react";
 import NavBar from "./NavBar";
 import "./OneProductPage.css"
 
-const OneProductPage = ({currentProduct, order, setOrder, products}) => {
+
+const OneProductPage = ({currentProduct, order, setOrder, products, currentCustomer, setCurrentCustomer}) => {
 
     const [tempQuantity, setTempQuantity] = useState("");
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if(tempQuantity!==""){
+        if(tempQuantity!=="" && currentProduct.availableQuantity !== 0){
             let tempOrder = {
                 product: currentProduct,
                 quantitySold: tempQuantity,
@@ -19,8 +20,11 @@ const OneProductPage = ({currentProduct, order, setOrder, products}) => {
     
     return(
         <div>
-            <NavBar order={order} products={products}
+            <NavBar order={order} 
+            products={products}
             setOrder={setOrder}
+            currentCustomer={currentCustomer}
+            setCurrentCustomer={setCurrentCustomer}
             />
             <div className="oneproduct">
                 <div>

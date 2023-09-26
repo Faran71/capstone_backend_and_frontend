@@ -121,7 +121,6 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
                         onChange={(e) => setPassword(e.target.value)}
                         />
                         <button type="submit">Register</button>
-
                     </form>
                     
                 </Box>

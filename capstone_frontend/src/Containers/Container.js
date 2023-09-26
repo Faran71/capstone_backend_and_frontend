@@ -39,6 +39,10 @@ const Container = () => {
         fetchOrders();
     },[])
 
+    useEffect(() => {
+        fetchOrders();
+    },[allOrders])
+
 
     return (
         <div>
@@ -48,6 +52,8 @@ const Container = () => {
                     order={order}
                     products={products}
                     setOrder={setOrder}
+                    currentCustomer={currentCustomer}
+                    setCurrentCustomer={setCurrentCustomer}
                     />} key={1} />
                     <Route path="/Products" element={<ProductsPage 
                     products={products} 
@@ -57,13 +63,18 @@ const Container = () => {
                     setCategory={setCategory}
                     currentProduct={currentProduct}
                     setCurrentProduct={setCurrentProduct}
+                    currentCustomer={currentCustomer}
+                    setCurrentCustomer={setCurrentCustomer}
                     />} key={2} />
                     <Route path="/OneProduct" element={<OneProductPage 
                     currentProduct={currentProduct}
                     order={order}
-                    setOrder={setOrder}/>} key={3}
-                    order={order} 
-                    products={products}/>
+                    setOrder={setOrder}
+                    products={products}
+                    currentCustomer={currentCustomer}
+                    setCurrentCustomer={setCurrentCustomer}
+                    />} key={3}
+                    />
                     <Route path="/LogIn" element={<LogInPage 
                     customerDetails={customerDetails}
                     setCustomerDetails={setCustomerDetails}
@@ -74,7 +85,8 @@ const Container = () => {
                     setOrder={setOrder}
                     products={products}
                     allOrders={allOrders}
-                    currentCustomer={currentCustomer}/>} key={5} />
+                    currentCustomer={currentCustomer}
+                    setCurrentCustomer={setCurrentCustomer}/>} key={5} />
 
                 </Routes>
             </BrowserRouter>
