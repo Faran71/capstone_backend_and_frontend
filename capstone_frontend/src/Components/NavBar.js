@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from "react";
 
-const NavBar = ({order, setOrder}) => {
+const NavBar = ({products,order, setOrder, setFilterProducts,currentCustomer, setCurrentCustomer}) => {
     const navigate = useNavigate();
 
     const [modalProducts, setModalProducts] = useState([]);
@@ -45,13 +45,35 @@ const NavBar = ({order, setOrder}) => {
         setModalProducts(displayOrders);
     },[order])
     
+      const ifLoggedIn = () => {
+        if(currentCustomer){
+            return(
+                <div>
+                    <button onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
+                    <button  onClick={() => setCurrentCustomer(null)}>LogOut</button>
+                </div>
+                 )
+            
+        } else {
+            return <button onClick={() => navigate("/LogIn")}>Log In / Register</button>
+        }
+      }
+
       
 
     return(
         <div className="nav-bar">
             <button onClick={() => navigate("/")}>Logo</button>
-            <button onClick={() => navigate("/Products")}>All Products</button>
-            <button onClick={() => navigate("/LogIn")}>Account</button>
+            <button onClick={() => {
+                setFilterProducts(products)
+                navigate("/Products")
+
+            }}>All Products</button>
+            
+            {ifLoggedIn()}
+
+
+
             <button variant= "contained" onClick={handleOpen}>
                 <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>
             </button>
@@ -66,7 +88,13 @@ const NavBar = ({order, setOrder}) => {
                     <div className="modal">
                     {modalProducts}
                     </div>
-                    <button onClick={() => navigate("/LogIn")}>Check out</button>
+                    <button onClick={() => {
+                        if(currentCustomer){
+                            navigate("/OrderHistory")
+                        } else {
+                            navigate("/LogIn")
+                        }
+                    }}>Check out</button>
                 </Box>
 
             </Modal>
