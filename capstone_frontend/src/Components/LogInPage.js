@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./LogInPage.css"
 import { useNavigate } from "react-router-dom";
 import Box from '@mui/material/Box';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { paperClasses } from "@mui/material";
 
-const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCurrentCustomer}) => {
+const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCurrentCustomer, fetchCustomers}) => {
     const navigate = useNavigate();
 
     const [tempEmail, setTempEmail] = useState("")
@@ -19,16 +19,57 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
     const [password, setPassword] = useState("");
     const [registrationData, setRegistrationData] = useState({});
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        customerDetails.map((customer) => {
-            if(customer.email === tempEmail && customer.password === tempPassword){
-                setCurrentCustomer(customer);
-                navigate("/OrderHistory")
-            }
+    const [isWrong, setIsWrong] = useState(true);
+
+
+    const postLogInCustomer = async (tempEmail, tempPassword) => {
+        let temp = {
+            email: tempEmail,
+            password: tempPassword
+        }
+        console.log(tempEmail)
+        console.log(tempPassword)
+
+        console.log(temp);
+        const newResponse = await fetch(`http://localhost:8080/customers/authenticate`,{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body:JSON.stringify(temp)
         })
+        const newC = await newResponse.json();
+        setCurrentCustomer(newC);
     }
 
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        postLogInCustomer(tempEmail, tempPassword);
+        // if (currentCustomer){
+        //     fetchCustomers()
+        //     navigate("/OrderHistory");
+        //     // setIsWrong(true);
+        // } 
+        // else {
+        //     // setIsWrong(false);
+        // }
+
+        // customerDetails.map((customer) => {
+        //     if(customer.email === tempEmail && customer.password === tempPassword){
+        //         setCurrentCustomer(customer);
+        //         navigate("/OrderHistory");
+        //         setIsWrong(true);
+        //     } else {
+        //         setIsWrong(false);
+        //     }
+        // })
+    }
+
+    useEffect(() => {
+        if (currentCustomer){
+            fetchCustomers()
+            navigate("/OrderHistory");
+            // setIsWrong(true);
+        } 
+    },[currentCustomer])
 
     const postCustomer = async (registrationData) => {
         const newOrderResponse = await fetch(`http://localhost:8080/customers`,{
@@ -44,6 +85,7 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    
 
     const handleRegistrationFormSubmit = (event) => {
         event.preventDefault();
@@ -53,9 +95,15 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
             address: address,
             password: password
         })
-        handleClose();
-        postCustomer(registrationData);
+        // postCustomer(registrationData);
+        
+        
     }
+
+    useEffect(() => {
+        postCustomer(registrationData);
+        handleClose();
+    },[registrationData])
 
     const style = {
         position: 'absolute',
@@ -68,9 +116,20 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
         p: 4, 
       };
 
+    //   useEffect(() => {
+    //     setTemp({
+    //         email: tempEmail,
+    //         password: tempPassword
+    //     })
+    //   },[email,password])
+
+      
+
+
     return(
         <div className="log-in">
             <form className="log-in-form" onSubmit={handleFormSubmit}>
+                {/* <p hidden={isWrong}>Incorrect Credentials</p> */}
                 <input type="text" 
                 name="tempEmail"
                 placeholder="Email"
@@ -84,8 +143,9 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
                 onChange={(e) => setTempPassword(e.target.value)}
                 />
                 <button type="submit">Sign In</button>
-                <button variant= "contained" onClick={handleOpen}>Register</button>
+                
             </form>
+            <button variant= "contained" onClick={handleOpen}>Register</button>
             
             <Modal
                 open={open}

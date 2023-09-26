@@ -79,7 +79,8 @@ const Container = () => {
                     customerDetails={customerDetails}
                     setCustomerDetails={setCustomerDetails}
                     currentCustomer={currentCustomer}
-                    setCurrentCustomer={setCurrentCustomer}/>} key={4} />
+                    setCurrentCustomer={setCurrentCustomer}
+                    fetchCustomers={fetchCustomers}/>} key={4} />
                     <Route path="/OrderHistory" element={<OrderHistoryPage 
                     order={order} 
                     setOrder={setOrder}
