@@ -34,5 +34,7 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
+    // filter for category
+
 
 }

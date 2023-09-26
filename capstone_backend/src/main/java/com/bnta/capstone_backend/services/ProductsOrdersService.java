@@ -27,15 +27,13 @@ public class ProductsOrdersService {
     public List<ProductsOrders> findAllProductsOrders() {
         return this.productsOrdersRepository.findAll();
     }
-//--------------------------------------------------------------------------------------------------------------------------------
+
     public ProductsOrders addToProdOrders(Long productId, Long orderId, int quantitySold){
 
         Product product = productRepository.findById(productId).get(); // link product to its order
 
         if(product.getAvailableQuantity()>=quantitySold){
             ProductsOrders newProdOrder = new ProductsOrders(); // create a new productOrder
-
-//          Product product = productRepository.findById(productId).get(); // link product to its order
 
             newProdOrder.setProduct(product); // set the product
             newProdOrder.setQuantitySold(quantitySold); // set the quantity sold
@@ -51,5 +49,4 @@ public class ProductsOrdersService {
         }
         return null;
     }
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 }
