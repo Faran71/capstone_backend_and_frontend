@@ -6,7 +6,7 @@ const CategoriesBox = ({setProducts}) => {
     const navigate = useNavigate()
 
     const fetchProducts = async (category) => {
-        const response = await fetch(`http://localhost:8080/products/${category}`);
+        const response = await fetch(`http://localhost:8080/products/category=${category}`);
         const data = await response.json()
         setProducts(data);
     }
