@@ -30,6 +30,9 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
             setOriginalProducts={setOriginalProducts}
             setProducts={setProducts}
             />
+            <div>
+                <input />
+            </div>
 
             <SideBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar}/>
             
