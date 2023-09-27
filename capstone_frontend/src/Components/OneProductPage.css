@@ -1,7 +1,20 @@
+
+
 .oneproduct img{
-width: 30VW;
+width: 30vw;
+height: 60vh;
 }
 .oneproduct {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 10vw;
+    padding-left: 10vw;
+}
+
+.right {
+    font-size: 20px;
+    padding-right: 5vw;
+    padding-top: 10vh;
 }

@@ -32,7 +32,8 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
             />
 
             <SideBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar}/>
-            <div>
+            
+            <div className="outer">
                 <div className="display">
                     {displayProducts}
                 </div>

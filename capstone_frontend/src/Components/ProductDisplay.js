@@ -5,21 +5,19 @@ const ProductDisplay = ({product}) => {
 
     const [isHidden, setIsHidden] = useState(true)
 
-    useEffect(() => {
+    const isSoldOut = () => {
         if(product.availableQuantity === 0){
-            setIsHidden(false);
-        } else {
-            setIsHidden(true);
-        }
-
-    },[product.availableQuantity])
+            return <p style={{color:"red"}}>Sold Out!</p>
+        } 
+    }
 
     return(
         <div className="display-individual">
                 <img src={product.imageURL}/> 
                 <h3>{product.name}</h3>
                 <p>£{product.price}</p>
-                <p hidden={isHidden}>Sold Out!</p>
+                {isSoldOut()}
+                
         </div>
     )
 }
