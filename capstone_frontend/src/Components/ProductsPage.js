@@ -1,7 +1,9 @@
 import NavBar from "./NavBar";
 import ProductDisplay from "./ProductDisplay";
 import "./ProductsPage"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, } from "react-router-dom";
+import SideBar from "./SideBar";
+import { useState } from "react";
 
 const ProductsPage = ({products, order, category,  setOrder, setCategory,originalProducts, setOriginalProducts, setProducts,setCurrentProduct, currentCustomer, setCurrentCustomer}) => {
     const navigate = useNavigate();
@@ -9,6 +11,14 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
     const displayProducts = products.map((product) => {
         return <div onClick={() => {setCurrentProduct(product); navigate("/OneProduct");}}><ProductDisplay product={product} /></div>;
     })
+
+    const [sidebarOpen, setSideBarOpen] = useState(false);
+    const handleViewSidebar = () => {
+        setSideBarOpen(!sidebarOpen);
+    };
+
+    
+
     return(
         <div>
             <NavBar order={order} 
@@ -20,6 +30,9 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
             setOriginalProducts={setOriginalProducts}
             setProducts={setProducts}
             />
+
+            <SideBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar}/>
+
             <div className="display">
                 {displayProducts}
             </div>
