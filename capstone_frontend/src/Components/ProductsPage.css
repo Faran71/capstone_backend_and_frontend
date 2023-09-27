@@ -8,8 +8,9 @@
 }
 
 .display-individual img{
-    width: 25vw;
+    width: 20vw;
     height: 35vh;
+    padding-left: 2vw;
 }
 
 .display-individual {
