@@ -18,6 +18,7 @@ const ProductDisplay = ({product}) => {
         <div className="display-individual">
                 <img src={product.imageURL}/> 
                 <h3>{product.name}</h3>
+                <p>£{product.price}</p>
                 <p hidden={isHidden}>Sold Out!</p>
         </div>
     )
