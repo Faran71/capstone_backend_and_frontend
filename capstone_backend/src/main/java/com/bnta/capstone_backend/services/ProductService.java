@@ -34,7 +34,7 @@ public class ProductService {
 
     // search bar
     public List<Product> searchProducts(String name, String category,String description ) {
-        return productRepository.findProductsByNameOrCategoryOrDescription(name,category,description);
+        return productRepository.searchProductsByFilters(name,category,description);
     }
 
 
