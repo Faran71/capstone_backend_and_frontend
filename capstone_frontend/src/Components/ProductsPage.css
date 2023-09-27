@@ -5,6 +5,9 @@
     padding-top: 10vh;
     width: 90vw;
     padding-left: 5vw;
+    height: 80vh;
+    overflow-y: auto;
+
 }
 
 .display-individual img{
@@ -19,5 +22,10 @@
     /* width: 30vw; */
     height: 50vh;
 }
+
+/* .outer {
+    height: 90vh;
+    overflow-y: auto;
+} */
 
 
