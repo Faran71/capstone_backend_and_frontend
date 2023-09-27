@@ -2,23 +2,23 @@ package com.bnta.capstone_backend.models;
 
 public class ReviewDTO {
 
-    private String userName;
+    private String name;
     private String reviewContent;
 
     public ReviewDTO() {
     }
 
     public ReviewDTO(String userName, String reviewContent) {
-        this.userName = userName;
+        this.name = name;
         this.reviewContent = reviewContent;
     }
 
     public String getUserName() {
-        return userName;
+        return name;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.name = name;
     }
 
     public String getReviewContent() {

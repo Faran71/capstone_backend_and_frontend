@@ -27,6 +27,12 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        //REVIEW DATA LOADER
+
+        List<Review> reviews = Arrays.asList(
+                new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me", )
+        )
+
         // CUSTOMER DATA LOADER
 
         List<Customer> customers = Arrays.asList(
@@ -38,6 +44,7 @@ public class DataLoader implements ApplicationRunner {
             Customer customerName = new Customer(customer.getName(), customer.getEmail(), customer.getAddress(), encryptPassword);
             customerRepository.save(customerName);
         }
+
 
         // PRODUCTS DATA LOADER
 

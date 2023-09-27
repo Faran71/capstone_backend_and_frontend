@@ -1,8 +1,6 @@
 package com.bnta.capstone_backend.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 public class Review {
 
@@ -12,18 +10,29 @@ public class Review {
     private Long id;
 
     @Column
-
-    private String userName;
+    private String name;
+    @Column
     private String reviewContent;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public Review() {
     }
 
-    public Review( String reviewContent, Product product) {
+    public Review( String name, String reviewContent, Product product) {
+        this.name = name;
         this.reviewContent = reviewContent;
         this.product = product;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -49,4 +58,6 @@ public class Review {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+
 }
