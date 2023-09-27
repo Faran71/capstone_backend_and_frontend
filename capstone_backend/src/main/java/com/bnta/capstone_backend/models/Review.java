@@ -12,6 +12,8 @@ public class Review {
     private Long id;
 
     @Column
+
+    private String userName;
     private String reviewContent;
 
     private Product product;
