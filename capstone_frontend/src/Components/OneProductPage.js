@@ -7,16 +7,24 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
 
     const [tempQuantity, setTempQuantity] = useState("");
 
+    const [soldOut, setSoldOut] = useState(true)
+    const [limited, setLimited] = useState(true)
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if(tempQuantity!=="" && currentProduct.availableQuantity !== 0){
+        if(tempQuantity!=="" && (currentProduct.availableQuantity-tempQuantity) >= 0){
             let tempOrder = {
                 product: currentProduct,
                 quantitySold: tempQuantity,
             }
             setOrder([...order,tempOrder]);
+        } else if(currentProduct.availableQuantity === 0) {
+            setSoldOut(false)
+        } else {
+            setLimited(false);
         }
     }
+
     
     return(
         <div>
@@ -30,7 +38,7 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
             setProducts={setProducts}
             />
             <div className="oneproduct">
-                <div>
+                <div className="left">
                     <h2>{currentProduct.name}</h2>
                     <img src={currentProduct.imageURL} />
                     <p>Price: £{currentProduct.price}</p>
@@ -44,9 +52,11 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
                         />
 
                         <button type="submit">Buy</button>
+                        <p hidden={soldOut}>Sold Out !</p>
+                        <p hidden={limited}>Only {currentProduct.availableQuantity} avaliable</p>
                     </form>
                 </div>
-                <div>
+                <div className="right">
                     <p>{currentProduct.description}</p>
                 </div>
             </div>

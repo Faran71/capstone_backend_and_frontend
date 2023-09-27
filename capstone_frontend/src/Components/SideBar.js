@@ -10,15 +10,19 @@ const SideBar = ({isOpen, toggleSidebar}) => {
     <div className={sidebarClass}>
         <div className="slidebar-content">
             <h3>Category</h3>
-            <button  className="btn">Home</button>
-            <button  className="btn">Fact</button>
-            <button  className="btn">Quote</button>
-            <button  className="btn">Age Guesser</button>
-            <button onClick={toggleSidebar} className="btn">Toggle Sidebar</button>
+            <div className="category-filter">
+                <button  className="btn">Clothes</button>
+                <button  className="btn">Electronics</button>
+                <button  className="btn">Home</button>
+                <button  className="btn">Books</button>
+                <button  className="btn">Cosmetics</button>
+                <button  className="btn">Jewellery</button>
+            </div>
+            
         </div>
 
-        <button onClick={toggleSidebar} className="sidebar-toggle">
-            Toggle Sidebar
+        <button onClick={toggleSidebar} className="sidebar-toggle" >
+            <img src="./sidebar.png" className="sidebar-img"/>
         </button>
     </div>
   );

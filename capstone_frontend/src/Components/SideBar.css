@@ -9,13 +9,20 @@
     transition: left 0.3s ease-in-out;
     background-color: lightgray;
   }
+
+  .category-filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 0.5vw;
+  }
   
   .slidebar-content .btn {
     bottom: 0vh;
-    width: 20vw;
-    height: 10vh;
+    width: 9vw;
+    height: 5vh;
     display: flex;
-    flex-direction: column-reverse;
+    /* flex-direction: column;
+    flex-wrap: wrap; */
   }
   
   
@@ -42,5 +49,10 @@
   }
   .content.open {
     left: 20vw;
+  }
+
+  .sidebar-img {
+    width: 2vw;
+    height: 2vw;
   }
     
