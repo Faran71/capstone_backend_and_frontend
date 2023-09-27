@@ -1,18 +1,25 @@
 package com.bnta.capstone_backend.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 public class Review {
 
-    Long id;
+    @Id
+    @GeneratedValue
+    @Column
+    private Long id;
 
-    String reviewContent;
+    @Column
+    private String reviewContent;
 
-    Product product;
+    private Product product;
 
     public Review() {
     }
 
-    public Review(Long id, String reviewContent, Product product) {
-        this.id = id;
+    public Review( String reviewContent, Product product) {
         this.reviewContent = reviewContent;
         this.product = product;
     }
