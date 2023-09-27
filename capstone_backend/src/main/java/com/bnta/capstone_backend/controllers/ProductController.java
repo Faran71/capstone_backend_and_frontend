@@ -25,7 +25,7 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.FOUND);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category={category}")
     public ResponseEntity<List<Product>> getProductByCategory(@PathVariable String category) {
         List<Product> products = productService.getProductByCategory(category);
         return new ResponseEntity<>(products, HttpStatus.OK);
@@ -33,13 +33,13 @@ public class ProductController {
 
     // filter for category
 
-    @GetMapping("/{rating}")
+    @GetMapping("/rating={rating}")
     public ResponseEntity<List<Product>> getProductByRating(@PathVariable int rating) {
         List<Product> products = productService.getProductByRating(rating);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    @GetMapping("/{price}")
+    @GetMapping("/price={price}")
     public ResponseEntity<List<Product>> getProductByPrice(@PathVariable int price) {
         List<Product> products = productService.getProductByPrice(price);
         return new ResponseEntity<>(products, HttpStatus.OK);
