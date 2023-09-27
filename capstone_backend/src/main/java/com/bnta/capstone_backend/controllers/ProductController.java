@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,6 +42,12 @@ public class ProductController {
     @GetMapping("/price={price}")
     public ResponseEntity<List<Product>> getProductByPrice(@PathVariable int price) {
         List<Product> products = productService.getProductByPrice(price);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam(required = false) String name, @RequestParam(required = false) String category, @RequestParam(required = false) String description) {
+        List<Product> products = productService.searchProducts(name,category,description);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 

@@ -33,6 +33,9 @@ public class ProductService {
     }
 
     // search bar
-        // when searching we need it to search names, descriptions, maybe even category
+    public List<Product> searchProducts(String name, String category,String description ) {
+        return productRepository.searchProductsByFilters(name,category,description);
+    }
+
 
 }
