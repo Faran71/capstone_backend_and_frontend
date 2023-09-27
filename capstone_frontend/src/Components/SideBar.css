@@ -55,4 +55,16 @@
     width: 2vw;
     height: 2vw;
   }
+
+.price-btn button{
+    height: 5vh;
+    width: 3vw;
+}
+
+.price-btn {
+    /* gap: 1vw; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 1vw;
+}
     

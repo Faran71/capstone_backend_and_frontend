@@ -36,6 +36,12 @@ const Container = () => {
         setAllOrders(data);
     }
 
+    const fetchProductsCategory = async (category) => {
+        const response = await fetch(`http://localhost:8080/products/category=${category}`);
+        const data = await response.json()
+        setProducts(data);
+    }
+
 
     useEffect(() => {
         fetchProducts();
@@ -61,6 +67,7 @@ const Container = () => {
                     setOriginalProducts={setOriginalProducts}
                     setCurrentCustomer={setCurrentCustomer}
                     setProducts={setProducts}
+                    fetchProductsCategory={fetchProductsCategory}
                     
                     />} key={1} />
                     <Route path="/Products" element={<ProductsPage 
@@ -76,6 +83,7 @@ const Container = () => {
                     setCurrentCustomer={setCurrentCustomer}
                     originalProducts={originalProducts}
                     setOriginalProducts={setOriginalProducts}
+                    fetchProductsCategory={fetchProductsCategory}
                     />} key={2} />
                     <Route path="/OneProduct" element={<OneProductPage 
                     currentProduct={currentProduct}

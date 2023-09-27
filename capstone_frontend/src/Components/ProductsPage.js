@@ -5,7 +5,7 @@ import { useNavigate, } from "react-router-dom";
 import SideBar from "./SideBar";
 import { useEffect, useState } from "react";
 
-const ProductsPage = ({products, order, category,  setOrder, setCategory,originalProducts, setOriginalProducts, setProducts,setCurrentProduct, currentCustomer, setCurrentCustomer}) => {
+const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrder, setCategory,originalProducts, setOriginalProducts, setProducts,setCurrentProduct, currentCustomer, setCurrentCustomer}) => {
     const navigate = useNavigate();
 
     const [searchInput, setSearchInput] = useState("");
@@ -78,7 +78,7 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
             
             </div>
 
-            <SideBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar}/>
+            <SideBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar} setProducts={setProducts}/>
             
             <div className="outer">
                 <div className="display">

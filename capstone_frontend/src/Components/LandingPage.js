@@ -6,7 +6,7 @@ import images from "../images";
 
 
 
-const LandingPage = ({order, products,setProducts, setOrder,originalProducts, setOriginalProducts, currentCustomer, setCurrentCustomer}) => {
+const LandingPage = ({order, products,setProducts, setOrder,originalProducts, fetchProductsCategory, setOriginalProducts, currentCustomer, setCurrentCustomer}) => {
  
 
     return(
@@ -21,7 +21,7 @@ const LandingPage = ({order, products,setProducts, setOrder,originalProducts, se
             setProducts={setProducts}
             />
             <Carousel className="carousel" images={images} />
-            <CategoriesBox setProducts={setProducts}/>
+            <CategoriesBox setProducts={setProducts} fetchProductsCategory={fetchProductsCategory}/>
         </div>
     )
 }
