@@ -15,15 +15,13 @@ const ProductsPage = ({products, order, category,  setOrder, setCategory,origina
     })
 
     const fetchProducts = async (searchInput) => {
-        // setProducts([]);
+        setProducts([]);
 
         const responseName = await fetch(`http://localhost:8080/products/search?&name=${searchInput}&category=&description=`);
         const dataName = await responseName.json()
         console.log(dataName);
         setProducts([...products,dataName]);
-        
-        
-        
+                
 
         const responseCategory = await fetch(`http://localhost:8080/products/search?&name=&category=${searchInput}&description=`);
         const dataCategory = await responseCategory.json()
