@@ -42,8 +42,8 @@ public class Product {
     @Column
     private int rating;
 
-    @OneToMany(mappedBy = "review")
-    @JsonIgnoreProperties({"review"})
+    @OneToMany(mappedBy = "product")
+    @JsonIgnoreProperties({"product"})
     private List<Review> reviews;
 
     public Product() {

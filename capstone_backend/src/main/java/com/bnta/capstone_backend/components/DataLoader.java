@@ -3,6 +3,7 @@ package com.bnta.capstone_backend.components;
 import com.bnta.capstone_backend.models.*;
 import com.bnta.capstone_backend.repositories.CustomerRepository;
 import com.bnta.capstone_backend.repositories.ProductRepository;
+import com.bnta.capstone_backend.repositories.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -20,6 +21,8 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    ReviewRepository reviewRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -27,11 +30,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        //REVIEW DATA LOADER
 
-        List<Review> reviews = Arrays.asList(
-                new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me", )
-        )
 
         // CUSTOMER DATA LOADER
 
@@ -237,6 +236,18 @@ public class DataLoader implements ApplicationRunner {
         for (Product product : products) {
             Product productName = new Product(product.getName(),product.getPrice(),product.getAvailableQuantity(),product.getImageURL(),product.getCategory(),product.getItem(),product.getDescription(),product.getRating());
             productRepository.save(productName);
+        }
+
+        //REVIEW DATA LOADER
+
+        List<Review> reviews = Arrays.asList(
+                new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me",products.get(3) )
+        );
+
+
+        for (Review review : reviews) {
+            Review reviewName = new Review(review.getName(),review.getReviewContent(), review.getProduct());
+            reviewRepository.save(reviewName);
         }
 
 

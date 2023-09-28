@@ -1,7 +1,10 @@
 package com.bnta.capstone_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "reviews")
 public class Review {
 
     @Id
@@ -15,7 +18,8 @@ public class Review {
     private String reviewContent;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "review_id")
+    @JsonIgnoreProperties({"review"})
     private Product product;
 
     public Review() {
