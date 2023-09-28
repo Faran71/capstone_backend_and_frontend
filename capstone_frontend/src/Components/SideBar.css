@@ -14,16 +14,13 @@
   .category-filter {
     display: grid;
     grid-template-columns: 1fr;
-    padding-left: 0.5vw;
-    align-items: center;
-    text-align: center;
-  }
 
-  .category {
-    align-items: center;
-    justify-content: center;
   }
   
+  .category-filter button:hover {
+    background-color: #907709;
+    color: white;
+  }
   .slidebar-content .btn {
     text-align: center;
     bottom: 0vh;
@@ -105,3 +102,44 @@
 .category h3 {
  color: white;
 }
+
+
+/* navbar */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* navbar */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+header nav a{
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: #5C4033;
+  font-size: 20px;
+
+}
+
+header nav a:hover{
+  background-color: #93563A;
+  color: white;
+  
+
+}
+
+
+header nav a.active {
+  background: var(--primary);
+  color: #5C4033;
+}
+
+
