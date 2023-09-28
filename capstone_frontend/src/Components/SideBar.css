@@ -14,7 +14,15 @@
   .category-filter {
     display: grid;
     grid-template-columns: 1fr;
+    padding-left: 0.5vw; 
+    padding-left: 0.5vw;
+    align-items: center;
+    text-align: center;
+  }
 
+  .category {
+    align-items: center;
+    justify-content: center;
   }
   
   .category-filter button:hover {
