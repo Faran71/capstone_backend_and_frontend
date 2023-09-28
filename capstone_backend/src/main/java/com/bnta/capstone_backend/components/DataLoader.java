@@ -244,7 +244,7 @@ public class DataLoader implements ApplicationRunner {
                 new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me",products.get(3) )
         );
 
-
+//        Save
         for (Review review : reviews) {
             Review reviewName = new Review(review.getName(),review.getReviewContent(), review.getProduct());
             reviewRepository.save(reviewName);
