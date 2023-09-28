@@ -2,3 +2,45 @@
 .carousel {
     margin-top: 5vh;
 }
+
+.categoriesBox {
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #A8B65E; 
+    color: white; 
+    padding: 20px; 
+  }
+  
+  .footer-column {
+    flex: 1; 
+    text-align: center; 
+    padding: 10px;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .footer-column:hover {
+    color: green;
+  }
+
+  .footer-column::after {
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: brown;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
+  }
+
+  .footer-column:hover::after {
+    opacity: 1;
+  }

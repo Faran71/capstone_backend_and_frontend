@@ -21,7 +21,21 @@ const LandingPage = ({order, products,setProducts, setOrder,originalProducts, fe
             setProducts={setProducts}
             />
             <Carousel className="carousel" images={images} />
-            <CategoriesBox setProducts={setProducts} fetchProductsCategory={fetchProductsCategory}/>
+            <div className="categoriesBox">
+                <CategoriesBox setProducts={setProducts} fetchProductsCategory={fetchProductsCategory}/>
+            </div>
+
+            <footer className="footer">
+                <div className="footer-column">
+                    <h3>Help & Information</h3>
+                </div>
+                <div className="footer-column">
+                    <h3>About</h3>
+                </div>
+                <div className="footer-column">
+                    <h3>More from Rainforest Retail</h3>
+                </div>
+            </footer>
         </div>
     )
 }

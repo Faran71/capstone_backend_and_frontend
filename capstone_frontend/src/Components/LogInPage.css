@@ -1,10 +1,13 @@
 .log-in {
-    background-color: hsla(126, 33%, 33%, 1);
+    background-color: hsla(166, 72%, 51%, 1);
     background-image:
-        radial-gradient(at 28% 26%, hsla(53, 77%, 31%, 1) 0px, transparent 50%),
-        radial-gradient(at 40% 20%, hsla(36, 68%, 33%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 0%, hsla(32, 100%, 56%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(63, 68%, 56%, 1) 0px, transparent 50%);
+        radial-gradient(at 40% 20%, hsla(120, 10%, 49%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(107, 20%, 40%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(194, 30%, 82%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(103, 42%, 36%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(174, 75%, 28%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(183, 57%, 41%, 1) 0px, transparent 50%);
     height: 100vh;
     z-index: 0;
 }
