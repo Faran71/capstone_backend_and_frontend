@@ -141,8 +141,8 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <p>Oheheheh</p>
+                <Box sx={style} className="rgrmodal">
+                    <p className="modalTitle">Please fill in the details below</p>
                     <form onSubmit={handleRegistrationFormSubmit} className="registration">
                         <input type="text" 
                         name="name"

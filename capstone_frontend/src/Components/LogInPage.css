@@ -76,6 +76,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     z-index: 1;
+    border: none;
 }
 
 .rgrcontainer button {
@@ -107,4 +108,55 @@
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     z-index: 1;
+    border: none;
+}
+
+.rgrmodal {
+    height: 40vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    /* z-index: 1; */
+    border: none;
+}
+
+.modalTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.registration {
+    width: 60%; 
+    max-width: 300px; 
+    text-align: center;
+}
+
+.registration input {
+    width: 33vh; 
+    padding: 8px;
+    margin-bottom: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.registration button {
+    width: 35vh; 
+    height: 4vh;
+    background-color: rgb(15, 89, 142);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.registration button:hover {
+    background-color: rgb(218, 147, 17);
 }
