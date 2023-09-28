@@ -28,8 +28,8 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<Customer> postCustomer(@RequestBody CustomerDTO customerDTO) {
-        customerService.addCustomer(customerDTO);
-        return new ResponseEntity(customerService.findAllCustomers(), HttpStatus.CREATED);
+       Customer addCustomer = customerService.addCustomer(customerDTO);
+        return new ResponseEntity(addCustomer, HttpStatus.CREATED);
     }
 
     @PostMapping("/authenticate")
