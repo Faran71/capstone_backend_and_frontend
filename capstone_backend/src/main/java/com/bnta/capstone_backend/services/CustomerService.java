@@ -27,6 +27,11 @@ public class CustomerService {
 
     public Customer addCustomer(CustomerDTO customerDTO) {
         String encryptPassword = passwordEncoder.encode(customerDTO.getPassword());
+        // if customer exists dont create new customer instead return null
+
+        if(customerRepository.findByEmail(customerDTO.getEmail())!=null){
+            return null;
+        }
         Customer customer = new Customer(customerDTO.getName(), customerDTO.getEmail(), customerDTO.getAddress(), encryptPassword);
         return this.customerRepository.save(customer);
     }

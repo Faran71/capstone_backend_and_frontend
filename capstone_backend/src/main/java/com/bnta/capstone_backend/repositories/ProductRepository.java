@@ -24,7 +24,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
         + "AND (:description IS NULL OR p.description ILIKE CONCAT('%', :description, '%'))"
     )
 
-
     List<Product> searchProductsByFilters(
             @Param("name") String name,
             @Param("category") String category,
