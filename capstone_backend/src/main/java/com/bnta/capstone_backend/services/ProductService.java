@@ -28,8 +28,8 @@ public class ProductService {
     }
 
     // filter get product by price
-    public List<Product> getProductByPrice(int price){
-        return productRepository.findProductsByPrice(price);
+    public List<Product> getProductByPrice(int priceLow, int priceHigh){
+        return productRepository.findProductsByPriceBetween(priceLow,priceHigh);
     }
 
     // search bar
