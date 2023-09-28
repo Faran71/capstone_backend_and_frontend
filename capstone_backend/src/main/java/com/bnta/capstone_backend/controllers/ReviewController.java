@@ -20,6 +20,11 @@ public class ReviewController {
     @Autowired
     ReviewService reviewService;
 
+    @PostMapping
+    public ResponseEntity<Review> postReview(@RequestBody ReviewDTO reviewDTO){
+        reviewService.addReview(reviewDTO);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 
 }

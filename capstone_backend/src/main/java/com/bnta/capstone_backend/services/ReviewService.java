@@ -21,4 +21,9 @@ public class ReviewService {
 //    save to the review table
 
 
+    public Review addReview(ReviewDTO reviewDTO){
+        Product getProduct = productRepository.findById(reviewDTO.getProductId()).get();
+        Review review = new Review(reviewDTO.getName(), reviewDTO.getReviewContent(), getProduct);
+        return this.reviewRepository.save(review);
+    }
 }
