@@ -1,5 +1,6 @@
 package com.bnta.capstone_backend.services;
 
+import com.bnta.capstone_backend.models.*;
 import com.bnta.capstone_backend.repositories.ProductRepository;
 import com.bnta.capstone_backend.repositories.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,6 @@ public class ReviewService {
 //    Create method that takes in customer name, review msg and product id from DTO
 //    method will retrieve product  by its id from the frontend
 //    save to the review table
-
-
-
-
 
 
 }

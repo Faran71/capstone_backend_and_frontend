@@ -5,12 +5,15 @@ public class ReviewDTO {
     private String name;
     private String reviewContent;
 
+    private Long productId;
+
     public ReviewDTO() {
     }
 
-    public ReviewDTO(String name, String reviewContent) {
+    public ReviewDTO(String name, String reviewContent, Long productId) {
         this.name = name;
         this.reviewContent = reviewContent;
+        this.productId = productId;
     }
 
     public String getName() {
@@ -27,5 +30,13 @@ public class ReviewDTO {
 
     public void setReviewContent(String reviewContent) {
         this.reviewContent = reviewContent;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 }
