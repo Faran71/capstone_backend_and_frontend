@@ -8,16 +8,16 @@ public class ReviewDTO {
     public ReviewDTO() {
     }
 
-    public ReviewDTO(String userName, String reviewContent) {
+    public ReviewDTO(String name, String reviewContent) {
         this.name = name;
         this.reviewContent = reviewContent;
     }
 
-    public String getUserName() {
+    public String getName() {
         return name;
     }
 
-    public void setUserName(String userName) {
+    public void setName(String name) {
         this.name = name;
     }
 
