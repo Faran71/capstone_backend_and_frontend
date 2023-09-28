@@ -83,7 +83,7 @@ const handlePriceFilter = () => {
                 {/* {VidTrim()} */}
                 <div>
                     <h3>Price Range</h3>
-                    <div>
+                    <div className="slider">
                         <Box sx={{ width: 200 }}>
                         <Slider
                             getAriaLabel={() => 'Temperature range'}

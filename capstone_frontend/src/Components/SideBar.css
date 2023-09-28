@@ -7,24 +7,44 @@
     height: 95vh;
     width: 20vw;
     transition: left 0.3s ease-in-out;
-    background-color: lightgray;
+    background-color: #7D5328;
+    text-align: center;
   }
 
   .category-filter {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding-left: 0.5vw;
   }
   
   .slidebar-content .btn {
     bottom: 0vh;
-    width: 9vw;
+    width: 16vw;
+    margin-left: 1.5vw;
     height: 5vh;
+    font-size: 1.3vw;
+    margin-bottom: 1vh;
+    border-radius: 8px;
     display: flex;
     /* flex-direction: column;
     flex-wrap: wrap; */
   }
+
+  .sidebar-content {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider {
+    padding-left: 2.5vw;
+  }
   
+  .slider button {
+    margin-left: 4vw;
+    border-radius: 8px;
+    height: 3vh;
+  }
   
   .sidebar-toggle {
     position: absolute;
@@ -59,6 +79,7 @@
 .price-btn button{
     height: 5vh;
     width: 3vw;
+    border-radius: 100px;
 }
 
 .price-btn {
@@ -68,3 +89,10 @@
     margin-left: 1vw;
 }
     
+.price h3 {
+  color: white;
+}
+
+.category h3 {
+ color: white;
+}
