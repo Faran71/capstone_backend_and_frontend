@@ -57,7 +57,7 @@ const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOrigin
                 <button onClick={handleSubmit}>Buy</button>
             </div>
 
-            <OrderHistoryProducts currentCustomer={currentCustomer}/>
+            <OrderHistoryProducts currentCustomer={currentCustomer} allOrders={allOrders}/>
             
         </div>
     )

@@ -20,6 +20,8 @@ const fetchProductsRating = async (rating) => {
     setProducts(data);
 }
 
+
+
 const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event, newValue) => {
@@ -30,11 +32,15 @@ const [value, setValue] = React.useState([20, 37]);
     return `${value}°C`;
   }
 
-// const [number, setNumber] = useState(0)
+const fetchProductsPrice = async () => {
+    const response = await fetch(`http://localhost:8080/products/price/${value[0]}/${value[1]}`);
+    const data = await response.json()
+    setProducts(data);
+}
 
-
-
-
+const handlePriceFilter = () => {
+    fetchProductsPrice();
+}
 
   const sidebarClass = isOpen ? "sidebar open" : "sidebar";
   return (
@@ -88,6 +94,7 @@ const [value, setValue] = React.useState([20, 37]);
                             valueLabelDisplay="auto"
                             getAriaValueText={valuetext}
                         />
+                        <button onClick={handlePriceFilter}>Apply Price</button>
                         </Box>
                     </div>
                 </div>

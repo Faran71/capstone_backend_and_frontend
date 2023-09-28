@@ -1,14 +1,15 @@
 import { useEffect } from "react"
 
-const OrderHistoryProducts = ({currentCustomer}) => {
+const OrderHistoryProducts = ({currentCustomer, allOrders}) => {
     let pastOrders;
 if(currentCustomer){
     pastOrders = currentCustomer.orders.map((item) => {
+        allOrders.map((temp) => {
+            if(item.id === temp.order.id)
+        })
         console.log(item)
         return(
-            // <p>hi</p>
             <div>
-                {/* <p>hi</p> */}
                 <p>{item.id}</p>
                 <p>{item.orderDateTime}</p>
             </div>
@@ -16,12 +17,6 @@ if(currentCustomer){
     })
 }
 
-
-
-
-    // useEffect(() => {
-    //     showOldOrders()
-    // },[currentCustomer])
     
     if(currentCustomer){
         return(

@@ -1,14 +1,21 @@
 import { useState } from "react";
 import NavBar from "./NavBar";
 import "./OneProductPage.css"
+import { useNavigate } from "react-router-dom";
 
 
 const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setProducts, setOriginalProducts, products, currentCustomer, setCurrentCustomer}) => {
+    const navigate = useNavigate();
 
     const [tempQuantity, setTempQuantity] = useState("");
 
     const [soldOut, setSoldOut] = useState(true)
     const [limited, setLimited] = useState(true)
+
+    const [name, setName] = useState("");
+
+    const [hideReviewMessage, setHideReviewMessage] = useState(true)
+
 
     const [ review, setReview] = useState("")
 
@@ -26,6 +33,43 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
             setLimited(false);
         }
     }
+    const postReview = async (name, currentProduct, review) => {
+        let reviewInfo = {
+            name: name,
+            reviewContent: review,
+            productId: currentProduct.id
+        }
+        const newOrderResponse = await fetch(`http://localhost:8080/reviews`,{
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body:JSON.stringify(reviewInfo)
+        })
+    }
+
+
+
+    const handleReview = (event) => {
+        event.preventDefault();
+        if(currentCustomer){
+            // setName(currentCustomer.name)
+            postReview(currentCustomer.name, currentProduct, review);
+            setReview("")
+        } else {
+            setHideReviewMessage(false)
+            setReview("")
+        }
+        
+    }
+    
+    const pastReviews = currentProduct.reviews.map((item) => {
+        return(
+            <div className="individual-review">
+                <p>Name: {item.name}</p>
+                <p>Comment: {item.reviewContent}</p>
+            </div>
+        )
+    })
+
 
     
     return(
@@ -63,8 +107,9 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
                     <p>Rating: {"⭐".repeat(currentProduct.rating)}</p>
                     <div>
                         <h3>Write a review</h3>
+                        <p hidden={hideReviewMessage} style={{color:"red" }}>Please Log In first.</p>
                         <div className="review-input">
-                            <form>
+                            <form onSubmit={handleReview}>
                                 <input type="text" 
                                 name="review"
                                 placeholder="Write Here..."
@@ -74,8 +119,11 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
                                 <button type="submit"><img src="./kite.png"/></button>
                             </form>
                         </div>
-                        <div>
-                            <h3>Our Customers view:</h3>
+                        <div >
+                            <h3>Our Customers views:</h3>
+                            <div >
+                                {currentProduct.reviews.length === 0 ? <p>No Reviews Yet...</p>: <div className="old-reviews">{pastReviews}</div>}
+                            </div>
                         </div>
                     </div>
                 </div>

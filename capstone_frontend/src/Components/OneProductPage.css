@@ -36,12 +36,26 @@ height: 60vh;
     width: 5vw;
     height: 10vh;
     background: none;
+    border-left: 20px;
 }
 .review-input form button img {
-    width:3vw;
-    height: 6vh;
+    width:2vw;
+    height: 4.3vh;
+
 }
-.review-input form button img:hover {
+/* .review-input form button img:hover {
     scale: 0.5;
     color: blue;
+} */
+
+.individual-review {
+    /* border-style: solid; */
+    border-bottom: solid;
+    padding-left: 2vw;
+}
+
+.old-reviews {
+    width: 32.3vw;
+    height: 30vh;
+    overflow-y: scroll;
 }
