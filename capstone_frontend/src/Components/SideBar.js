@@ -20,6 +20,60 @@ const fetchProductsRating = async (rating) => {
 
 const [number, setNumber] = useState(0)
 
+const VidTrim = () => {
+    const [start, setStart] = useState(0);
+    const [end, setEnd] = useState(0);
+  
+    function onStartChange(val) {
+      setStart(val);
+      setEnd(Math.max(end, val));
+    }
+  
+    function onEndChange(val) {
+      setEnd(Math.max(val, start));
+    }
+  
+    return (
+      <div className="VidTrim">
+        <div>
+          <div id="Sliders">
+            <Slider
+              value={start}
+              title={"Minimum Price"}
+              onChange={onStartChange}
+            ></Slider>
+  
+            <Slider
+              value={end}
+              title={"Maximum Price"}
+              onChange={onEndChange}
+            ></Slider>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
+  const Slider = ({ value, onChange, title }) => {
+    return (
+      <div className="Slider" style={{ textAlign: "center" }}>
+        <h1 className="sliderTitle">{title}</h1>
+        <p>£{value}</p>
+        <input
+          value={value}
+          step="1"
+          min={0}
+          max={100}
+          type="range"
+          onChange={(e) => onChange(e.target.value)}
+          style={{ width: "100%" }}
+        ></input>
+      </div>
+    );
+  };
+
+
+
   const sidebarClass = isOpen ? "sidebar open" : "sidebar";
   return (
     <div className={sidebarClass}>
@@ -56,6 +110,9 @@ const [number, setNumber] = useState(0)
                     navigate("/Products")}}  className="btn1">5</button>
                 </div>
                 
+                {/* <input value={start} step="1" min={0} max={100} type="range" onInput={onStartChange} style={{width: "100%"}} />
+                <input value={end} step="1" min={start} max={100} type="range" onInput={onEndChange} style={{width: "100%"}} /> */}
+                {VidTrim()}
             </div>
 
             

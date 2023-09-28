@@ -27,8 +27,6 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
             email: tempEmail,
             password: tempPassword
         }
-        console.log(tempEmail)
-        console.log(tempPassword)
 
         console.log(temp);
         const newResponse = await fetch(`http://localhost:8080/customers/authenticate`,{

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import { useScroll } from "framer-motion";
 import "./OrderHistoryPage.css";
+import OrderHistoryProducts from "./OrderHistoryProducts";
 
 const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOriginalProducts, setProducts, allOrders,currentCustomer, setCurrentCustomer}) => {
 
@@ -55,6 +56,8 @@ const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOrigin
                 {displayOrders}
                 <button onClick={handleSubmit}>Buy</button>
             </div>
+
+            <OrderHistoryProducts currentCustomer={currentCustomer}/>
             
         </div>
     )

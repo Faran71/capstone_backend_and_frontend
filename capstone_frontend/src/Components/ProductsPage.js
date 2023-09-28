@@ -65,7 +65,7 @@ const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrd
             setOriginalProducts={setOriginalProducts}
             setProducts={setProducts}
             />
-            <div>
+            <div className="search-bar">
                 <form onSubmit={handleSubmit}>
                     <input type="text" 
                     name="searchInput"

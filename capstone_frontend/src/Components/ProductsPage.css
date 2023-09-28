@@ -5,7 +5,7 @@
     padding-top: 10vh;
     width: 90vw;
     padding-left: 5vw;
-    height: 80vh;
+    height: 75vh;
     overflow-y: auto;
 
 }
@@ -31,9 +31,25 @@ background-blend-mode: multiply; */
 
 }
 
-/* .outer {
-    height: 90vh;
-    overflow-y: auto;
-} */
+.search-bar {
+    width: 100vw;
+    align-items: center;
+    padding-left: 31vw;
+    padding-top: 3vh;
+}
+
+.search-bar form button{
+    width: 10vw;
+    margin-left: 2vw;
+    height: 3.5vh;
+    border-radius: 20px;
+
+}
+.search-bar form input{
+    width: 20vw;
+    height: 3vh;
+    border-radius: 20px;
+}
+
 
 
