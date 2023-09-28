@@ -14,9 +14,13 @@
   .category-filter {
     display: grid;
     grid-template-columns: 1fr;
-    padding-left: 0.5vw;
+    padding-left: 0.5vw; 
   }
   
+  .category-filter button:hover {
+    background-color: #907709;
+    color: white;
+  }
   .slidebar-content .btn {
     bottom: 0vh;
     width: 16vw;
@@ -96,3 +100,44 @@
 .category h3 {
  color: white;
 }
+
+
+/* navbar */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* navbar */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+header nav a{
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: #5C4033;
+  font-size: 20px;
+
+}
+
+header nav a:hover{
+  background-color: #93563A;
+  color: white;
+  
+
+}
+
+
+header nav a.active {
+  background: var(--primary);
+  color: #5C4033;
+}
+
+

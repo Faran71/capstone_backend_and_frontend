@@ -75,7 +75,7 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
             {ifLoggedIn()}
 
             <button className="btn5" variant= "contained" onClick={handleOpen}>
-                <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>
+                <img src="./cart.png" className="shopping-cart"/>
             </button>
             <Modal
                 open={open}

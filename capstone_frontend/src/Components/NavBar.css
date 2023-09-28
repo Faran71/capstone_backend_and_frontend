@@ -2,13 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(72, 171, 58);
+    padding-top: 1vw;
+    background-color: #A8B65E;
+    height: 6vh;
 }
 
 .nav-bar .btn1 {
     width: 4vw;
     height: 5vh;
-    background-color: rgb(72, 171, 58);
+    background-color: #A8B65E;
     border: none;
     font-size: 1vw;
     font-weight: bold;
@@ -17,7 +19,7 @@
 .nav-bar .btn2 {
     width: 7vw;
     height: 5vh;
-    background-color: rgb(72, 171, 58);
+    background-color: #A8B65E;
     border: none;
     font-size: 1vw;
     font-weight: bold;
@@ -26,7 +28,7 @@
 .nav-bar .btn3 {
     width: 9vw;
     height: 5vh;
-    background-color: rgb(72, 171, 58);
+    background-color: #A8B65E;
     border: none;
     font-size: 1vw;
     font-weight: bold;
@@ -35,7 +37,7 @@
 .nav-bar .btn4 {
     width: 9vw;
     height: 5vh;
-    background-color: rgb(72, 171, 58);
+    background-color: #A8B65E;
     border: none;
     font-size: 1vw;
     font-weight: bold;
@@ -44,12 +46,14 @@
 .nav-bar .btn5 {
     width: 4vw;
     height: 5vh;
-    background-color: rgb(72, 171, 58);
+    background-color: #A8B65E;
     border: none;
     font-size: 1vw;
     font-weight: bold;
     position: relative;
 }
+
+
 
 .nav-bar button:hover {
   color: rgb(143, 86, 12);
@@ -72,10 +76,10 @@
   opacity: 1;
 }
 
+
 .shopping-cart {
     width: 3vw;
     height: 4vh;
-    background-color: lightgreen;
     opacity: 0.5;
 }
 

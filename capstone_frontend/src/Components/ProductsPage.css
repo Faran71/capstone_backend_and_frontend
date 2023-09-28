@@ -13,22 +13,17 @@
 .display-individual img{
     width: 20vw;
     height: 35vh;
+    border-radius: 10px;
     /* padding-left: 2vw; */
 }
 
 .display-individual {
     font-size: 1.3vw;
-    border-style: dotted;
     border-radius: 20px;
     padding: 10%;
     /* width: 30vw; */
     height: 50vh;
     margin: 2vw;
-    /* background-color: #e5e5f7;
-opacity: 0.8;
-background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
-background-blend-mode: multiply; */
-
 }
 
 .search-bar {
