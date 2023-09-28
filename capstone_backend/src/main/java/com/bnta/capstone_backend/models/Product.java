@@ -1,10 +1,13 @@
 package com.bnta.capstone_backend.models;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -38,6 +41,10 @@ public class Product {
 
     @Column
     private int rating;
+
+    @OneToMany(mappedBy = "product")
+    @JsonIgnoreProperties({"product"})
+    private List<Review> reviews;
 
     public Product() {
     }
@@ -123,6 +130,14 @@ public class Product {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
 
