@@ -33,9 +33,11 @@ public class DataLoader implements ApplicationRunner {
 
 
         // CUSTOMER DATA LOADER
+        String encryptPassword = passwordEncoder.encode("12345");
 
         List<Customer> customers = Arrays.asList(
-                new Customer("Jannah", "kittybrownietwirl@outlook.com", "35 Hungry Road, Hungary", "12345" ));
+                new Customer("Jannah", "kittybrownietwirl@outlook.com", "35 Hungry Road, Hungary", encryptPassword)
+        );
 
 
 
