@@ -10,3 +10,10 @@
     margin-left: 20vw;
     margin-right: 20vw;
   } */
+
+  .past-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: solid;
+  }

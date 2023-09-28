@@ -1,17 +1,26 @@
 import { useEffect } from "react"
+import "./OrderHistoryPage.css"
 
 const OrderHistoryProducts = ({currentCustomer, allOrders}) => {
     let pastOrders;
 if(currentCustomer){
     pastOrders = currentCustomer.orders.map((item) => {
-        allOrders.map((temp) => {
-            if(item.id === temp.order.id)
+         const pro = allOrders.map((temp) => {
+            if(item.id === temp.order.id){
+                return(
+                    <div className="past-order">
+                        <h3>{temp.product.name}</h3>
+                        <p>Order Time: {temp.order.orderDateTime}</p>
+                        <p>Quantity: {temp.quantitySold}</p>
+                        <p>Total: £{temp.quantitySold*temp.product.price}</p>
+                    </div>
+                )
+            }
         })
         console.log(item)
         return(
             <div>
-                <p>{item.id}</p>
-                <p>{item.orderDateTime}</p>
+                {pro}
             </div>
         )
     })
@@ -22,6 +31,8 @@ if(currentCustomer){
         return(
             <div>
                 <h1>Previous Orders</h1>
+                <br></br>
+                <hr></hr>
                 {currentCustomer.orders.length === 0 ? <p>No Previous Orders</p>: <div>{pastOrders}</div>}
                 
             </div>
