@@ -1,13 +1,12 @@
 /* sidebar */
 .sidebar {
     position: absolute;
-    /* top: 0px; */
     bottom: 0;
     left: -20vw;
     height: 95vh;
     width: 20vw;
     transition: left 0.3s ease-in-out;
-    background-color: #7D5328;
+    background-color: white;
     text-align: center;
   }
 
@@ -20,18 +19,19 @@
     text-align: center;
   }
 
-  .category {
-    align-items: center;
-    justify-content: center;
+  .category button {
+    color: #907709;
+    background-color: white;
+    font-weight: bold;
+    border: none;
   }
   
   .category-filter button:hover {
     background-color: #907709;
     color: white;
+    transition: 0.5s;
   }
   .slidebar-content .btn {
-    text-align: center;
-    bottom: 0vh;
     width: 16vw;
     margin-left: 1.5vw;
     height: 5vh;
@@ -39,8 +39,9 @@
     margin-bottom: 1vh;
     border-radius: 8px;
     display: flex;
-    /* flex-direction: column;
-    flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .sidebar-content {
@@ -104,11 +105,11 @@
 }
     
 .price h3 {
-  color: white;
+  color: rgb(155, 44, 44);
 }
 
 .category h3 {
- color: white;
+ color: rgb(175, 42, 42);
 }
 
 

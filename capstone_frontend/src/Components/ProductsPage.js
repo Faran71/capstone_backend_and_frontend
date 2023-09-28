@@ -85,6 +85,18 @@ const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrd
                     {displayProducts}
                 </div>
             </div>
+
+            <footer className="footer">
+                <div className="footer-column">
+                    <h3>Help & Information</h3>
+                </div>
+                <div className="footer-column">
+                    <h3>About</h3>
+                </div>
+                <div className="footer-column">
+                    <h3>More from Rainforest Retail</h3>
+                </div>
+            </footer>
             
         </div>
     )
