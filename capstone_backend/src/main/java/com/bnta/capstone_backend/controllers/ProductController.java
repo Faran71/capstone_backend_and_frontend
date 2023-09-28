@@ -39,9 +39,9 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    @GetMapping("/price={price}")
-    public ResponseEntity<List<Product>> getProductByPrice(@PathVariable int price) {
-        List<Product> products = productService.getProductByPrice(price);
+    @GetMapping("/price/{priceLow}/{priceHigh}")
+    public ResponseEntity<List<Product>> getProductByPrice(@PathVariable int priceLow, @PathVariable int priceHigh) {
+        List<Product> products = productService.getProductByPrice(priceLow, priceHigh);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 

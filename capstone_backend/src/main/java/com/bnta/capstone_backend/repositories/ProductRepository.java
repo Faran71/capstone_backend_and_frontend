@@ -16,7 +16,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findProductByRating(int rating);
 
-    List<Product> findProductsByPrice(int price);
+    List<Product> findProductsByPriceBetween(int priceLow, int priceHigh);
 
     @Query("SELECT p FROM Product p "
         + "WHERE (:name IS NULL OR p.name ILIKE CONCAT ('%', :name, '%'))"
