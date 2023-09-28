@@ -25,6 +25,7 @@ height: 15vh;
 .nav-bar .btn2 {
     width: 7vw;
     height: 5vh;
+    color: white;
     background-color: #A8B65E;
     border: none;
     font-size: 1vw;
@@ -34,6 +35,7 @@ height: 15vh;
 .nav-bar .btn3 {
     width: 9vw;
     height: 5vh;
+    color: white;
     background-color: #A8B65E;
     border: none;
     font-size: 1vw;
@@ -62,14 +64,14 @@ height: 15vh;
 
 
 .nav-bar button:hover {
-  color: rgb(143, 86, 12);
+  color: rgb(42, 165, 149);
 }
 
 .nav-bar button::after {
   content: '';
   height: 4px;
   width: 100%;
-  background: brown;
+  background: rgb(42, 165, 149);
   position: absolute;
   left: 0;
   bottom: 5px;

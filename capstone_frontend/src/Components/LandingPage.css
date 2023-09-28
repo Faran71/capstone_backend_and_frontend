@@ -25,14 +25,14 @@
   }
 
   .footer-column:hover {
-    color: green;
+    color: rgb(42, 165, 149);
   }
 
   .footer-column::after {
     content: '';
     height: 4px;
     width: 100%;
-    background: brown;
+    background: rgb(42, 165, 149);
     position: absolute;
     left: 0;
     bottom: 5px;
