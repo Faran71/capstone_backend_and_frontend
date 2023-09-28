@@ -38,11 +38,9 @@ public class DataLoader implements ApplicationRunner {
                 new Customer("Jannah", "kittybrownietwirl@outlook.com", "35 Hungry Road, Hungary", "12345" ));
 
 
-        for (Customer customer : customers) {
-            String encryptPassword = passwordEncoder.encode(customer.getPassword()); // hash password for security
-            Customer customerName = new Customer(customer.getName(), customer.getEmail(), customer.getAddress(), encryptPassword);
-            customerRepository.save(customerName);
-        }
+
+            customerRepository.saveAll(customers);
+
 
 
         // PRODUCTS DATA LOADER
@@ -233,24 +231,21 @@ public class DataLoader implements ApplicationRunner {
                         "Diamond encrusted 14-carat white gold surround in 50 spherical freshwater pearls. Length: 18 inches",4)
         );
 
-        for (Product product : products) {
-            Product productName = new Product(product.getName(),product.getPrice(),product.getAvailableQuantity(),product.getImageURL(),product.getCategory(),product.getItem(),product.getDescription(),product.getRating());
-            productRepository.save(productName);
-        }
+
+            productRepository.saveAll(products);
+
 
         //REVIEW DATA LOADER
 
         List<Review> reviews = Arrays.asList(
-                new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me",products.get(3) )
+                new Review("Zsolt", "The most comfortable trousers I have purchased in a long time, will definitely be repurchasing in different colours! However, you may need to size down as they are a little loose  around the waist for me",products.get(2) )
         );
 
 //        Save
-        for (Review review : reviews) {
-            Review reviewName = new Review(review.getName(),review.getReviewContent(), review.getProduct());
-            reviewRepository.save(reviewName);
+
+            reviewRepository.saveAll(reviews);
         }
 
 
     }
 
-}

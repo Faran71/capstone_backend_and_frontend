@@ -131,5 +131,13 @@ public class Product {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }
 

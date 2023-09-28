@@ -18,8 +18,8 @@ public class Review {
     private String reviewContent;
 
     @ManyToOne
-    @JoinColumn(name = "review_id")
-    @JsonIgnoreProperties({"review"})
+    @JoinColumn(name = "product_id")
+    @JsonIgnoreProperties({"reviews"})
     private Product product;
 
     public Review() {
