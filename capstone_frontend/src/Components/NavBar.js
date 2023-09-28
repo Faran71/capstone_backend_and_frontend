@@ -49,13 +49,13 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
         if(currentCustomer){
             return(
                 <div>
-                    <button onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
-                    <button  onClick={() => setCurrentCustomer(null)}>LogOut</button>
+                    <button className="btn4" onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
+                    <button className="btn4" onClick={() => setCurrentCustomer(null)}>LogOut</button>
                 </div>
                  )
             
         } else {
-            return <button onClick={() => navigate("/LogIn")}>Log In / Register</button>
+            return <button className="btn3" onClick={() => navigate("/LogIn")}>Log In / Register</button>
         }
       }
 
@@ -66,17 +66,15 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
 
     return(
         <div className="nav-bar">
-            <button onClick={() => navigate("/")}>Logo</button>
-            <button onClick={() => {
+            <button className='btn1' onClick={() => navigate("/")}>Logo</button>
+            <button className='btn2' onClick={() => {
                 {fullProducts()}
                 navigate("/Products")
             }}>All Products</button>
             
             {ifLoggedIn()}
 
-
-
-            <button variant= "contained" onClick={handleOpen}>
+            <button className="btn5" variant= "contained" onClick={handleOpen}>
                 <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-icon-shopping-cart-black-design.png" className="shopping-cart"/>
             </button>
             <Modal

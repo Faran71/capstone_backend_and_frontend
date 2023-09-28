@@ -108,24 +108,32 @@ const LogInPage = ({customerDetails, setCustomerDetails, currentCustomer, setCur
 
     return(
         <div className="log-in">
-            <form className="log-in-form" onSubmit={handleFormSubmit}>
-                {/* <p hidden={isWrong}>Incorrect Credentials</p> */}
-                <input type="text" 
-                name="tempEmail"
-                placeholder="Email"
-                value={tempEmail}
-                onChange={(e) => setTempEmail(e.target.value)}
-                />
-                <input type="password" 
-                name="tempPassword"
-                placeholder="Password"
-                value={tempPassword}
-                onChange={(e) => setTempPassword(e.target.value)}
-                />
-                <button type="submit">Sign In</button>
-                
-            </form>
-            <button variant= "contained" onClick={handleOpen}>Register</button>
+            <div className="loginmain">
+                <div className="lgcontainer">
+                    <form className="log-in-form" onSubmit={handleFormSubmit}>
+                    <h2>Log in to your account</h2>
+
+                        <input type="text" 
+                        name="tempEmail"
+                        placeholder="Email"
+                        value={tempEmail}
+                        onChange={(e) => setTempEmail(e.target.value)}
+                        />
+                        <input type="password" 
+                        name="tempPassword"
+                        placeholder="Password"
+                        value={tempPassword}
+                        onChange={(e) => setTempPassword(e.target.value)}
+                        />
+                        <button type="submit">Sign In</button>
+                        
+                    </form>
+                </div>
+                <div className="rgrcontainer">
+                    <h2>Need an account?</h2>
+                    <button className="rgrbtn" variant= "contained" onClick={handleOpen}>Register</button>
+                </div>
+            </div>
             
             <Modal
                 open={open}
