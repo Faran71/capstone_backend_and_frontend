@@ -4,7 +4,7 @@
     justify-content: space-around;
     padding-top: 1vw;
     background-color: #A8B65E;
-    height: 6vh;
+    height: 8vh;
 }
 
 .nav-bar .btn1 {
@@ -16,6 +16,12 @@
     font-weight: bold;
     position: relative;
 }
+
+.nav-bar .btn1 img {
+width: 8vw;
+height: 15vh;
+}
+
 .nav-bar .btn2 {
     width: 7vw;
     height: 5vh;

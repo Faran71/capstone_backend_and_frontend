@@ -66,7 +66,7 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
 
     return(
         <div className="nav-bar">
-            <button className='btn1' onClick={() => navigate("/")}>Logo</button>
+            <button className='btn1' onClick={() => navigate("/")}><img src="./logonew.png"></img></button>
             <button className='btn2' onClick={() => {
                 {fullProducts()}
                 navigate("/Products")
