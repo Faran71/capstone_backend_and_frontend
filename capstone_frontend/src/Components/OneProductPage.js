@@ -10,6 +10,8 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
     const [soldOut, setSoldOut] = useState(true)
     const [limited, setLimited] = useState(true)
 
+    const [ review, setReview] = useState("")
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         if(tempQuantity!=="" && (currentProduct.availableQuantity-tempQuantity) >= 0){
@@ -58,6 +60,24 @@ const OneProductPage = ({currentProduct, order, setOrder,originalProducts, setPr
                 </div>
                 <div className="right">
                     <p>{currentProduct.description}</p>
+                    <p>Rating: {"⭐".repeat(currentProduct.rating)}</p>
+                    <div>
+                        <h3>Write a review</h3>
+                        <div className="review-input">
+                            <form>
+                                <input type="text" 
+                                name="review"
+                                placeholder="Write Here..."
+                                value={review}
+                                onChange={(e) => setReview(e.target.value)}
+                                />
+                                <button type="submit"><img src="./kite.png"/></button>
+                            </form>
+                        </div>
+                        <div>
+                            <h3>Our Customers view:</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
             

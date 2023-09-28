@@ -18,3 +18,30 @@ height: 60vh;
     padding-right: 5vw;
     padding-top: 10vh;
 }
+
+.review-input form {
+    border-style: solid;
+    width: 32vw;
+    display: flex;
+
+}
+
+.review-input form input {
+    border: none;
+    width: 26vw;
+    height: 10vh;
+}
+.review-input form button {
+    border: none;
+    width: 5vw;
+    height: 10vh;
+    background: none;
+}
+.review-input form button img {
+    width:3vw;
+    height: 6vh;
+}
+.review-input form button img:hover {
+    scale: 0.5;
+    color: blue;
+}
