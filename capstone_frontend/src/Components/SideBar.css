@@ -15,9 +15,17 @@
     display: grid;
     grid-template-columns: 1fr;
     padding-left: 0.5vw;
+    align-items: center;
+    text-align: center;
+  }
+
+  .category {
+    align-items: center;
+    justify-content: center;
   }
   
   .slidebar-content .btn {
+    text-align: center;
     bottom: 0vh;
     width: 16vw;
     margin-left: 1.5vw;
@@ -41,7 +49,7 @@
   }
   
   .slider button {
-    margin-left: 4vw;
+    margin-left: 1vw;
     border-radius: 8px;
     height: 3vh;
   }
@@ -81,6 +89,7 @@
     width: 3vw;
     border-radius: 100px;
 }
+
 
 .price-btn {
     /* gap: 1vw; */
