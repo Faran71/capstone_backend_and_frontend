@@ -47,7 +47,7 @@ const handlePriceFilter = () => {
     <div className={sidebarClass}>
         <div className="slidebar-content">
             <div className="category">
-                <h3>Category</h3>
+                <h3 className="category-name-text">Category</h3>
                 <div className="category-filter">
                     <button onClick={() =>{fetchProductsCategory("Clothes")
                 navigate("/Products")}}  className="btn">Clothes</button>

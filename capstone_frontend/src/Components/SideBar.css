@@ -1,4 +1,6 @@
 /* sidebar */
+
+
 .sidebar {
     position: absolute;
     bottom: 0;
@@ -8,6 +10,10 @@
     transition: left 0.3s ease-in-out;
     background-color: white;
     text-align: center;
+  }
+
+  .category .category-name-text {
+    color: rgb(104, 55, 20);
   }
 
   .category-filter {
@@ -20,14 +26,15 @@
   }
 
   .category button {
-    color: #907709;
+    color: rgb(183, 117, 51);
     background-color: white;
     font-weight: bold;
     border: none;
   }
-  
+ 
+
   .category-filter button:hover {
-    background-color: #907709;
+    background-color: rgb(183, 117, 51);
     color: white;
     transition: 0.5s;
   }
@@ -105,11 +112,11 @@
 }
     
 .price h3 {
-  color: rgb(155, 44, 44);
+  color: rgb(104, 55, 20);
 }
 
 .category h3 {
- color: rgb(175, 42, 42);
+ color: rgb(183, 117, 51);
 }
 
 
