@@ -14,6 +14,7 @@
     background-color: #A8B65E; 
     color: white; 
     padding: 20px; 
+    max-height: 10vh;
   }
   
   .footer-column {
