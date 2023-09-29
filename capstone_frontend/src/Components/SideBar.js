@@ -84,7 +84,7 @@ const handlePriceFilter = () => {
                 <div>
                     <h3>Price Range</h3>
                     <div className="slider">
-                        <Box sx={{ width: 200 }}>
+                        <Box sx={{ width: 170 }}>
                         <Slider
                             getAriaLabel={() => 'Temperature range'}
                             value={value}
