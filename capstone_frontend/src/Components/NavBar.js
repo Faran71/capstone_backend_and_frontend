@@ -86,7 +86,7 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} className="modal-checkout">
-                    <p>Order Summary</p>
+                    <p className="order-summary">Order Summary</p>
                     <div className="modal">
                     {modalProducts}
                     </div>

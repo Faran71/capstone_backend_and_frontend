@@ -94,7 +94,7 @@ const handlePriceFilter = () => {
                             valueLabelDisplay="auto"
                             getAriaValueText={valuetext}
                         />
-                        <button onClick={handlePriceFilter}>Apply Price</button>
+                        <button className="apply-price" onClick={handlePriceFilter}>Apply Price</button>
                         </Box>
                     </div>
                 </div>

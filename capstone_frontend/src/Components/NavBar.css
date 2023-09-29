@@ -117,7 +117,7 @@ height: 5vh;
   
   }
 
-  #modal-button{
+  /* #modal-button{
     background-color: #E75F5E;
     font-family: 'Gochi Hand', cursive;
     border-radius: 15px;
@@ -129,7 +129,7 @@ height: 5vh;
   #modal-button:hover {
     background-color: #93563A;
   
-  }
+  } */
 
   .individual-order img {
     height: 50px;
@@ -161,6 +161,7 @@ height: 5vh;
   background-color: white;
 }
 
+
 .modalproduct button img {
   width: 1.7vw;
   height: 3vh;
@@ -176,9 +177,14 @@ height: 5vh;
     border: none;
 }
 
+.order-summary {
+  font-weight: bold;
+}
+
 .modal-checkout .btn10 {
   width: 10vw;
   margin-left: 0vw;
+  margin-top: 4vh;
   height: 3.5vh;
   border-radius: 20px;
   border: none;
