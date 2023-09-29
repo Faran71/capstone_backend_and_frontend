@@ -73,7 +73,7 @@ const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrd
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                     />
-                    <button type="submit">search</button>
+                    <button type="submit">Search</button>
                 </form>
             
             </div>
@@ -86,7 +86,7 @@ const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrd
                 </div>
             </div>
 
-            <footer className="footer">
+            {/* <footer className="footer">
                 <div className="footer-column">
                     <h3>Help & Information</h3>
                 </div>
@@ -96,7 +96,7 @@ const ProductsPage = ({products, order, category, fetchProductsCategory,  setOrd
                 <div className="footer-column">
                     <h3>More from Rainforest Retail</h3>
                 </div>
-            </footer>
+            </footer> */}
             
         </div>
     )

@@ -13,7 +13,7 @@
 .display-individual img{
     width: 20vw;
     height: 35vh;
-    border-radius: 10px;
+    border-radius: 20px;
     /* padding-left: 2vw; */
 }
 
@@ -30,7 +30,8 @@
     width: 100vw;
     align-items: center;
     padding-left: 31vw;
-    padding-top: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 
 .search-bar form button{

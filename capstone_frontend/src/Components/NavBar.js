@@ -38,7 +38,7 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
                 <div className="modalproduct">
                     <img src={item.product.imageURL}/>
                     <p>{item.product.name} - {item.quantitySold}</p>
-                    <button onClick={() => deleteOrder(item)}><img src ="https://www.freeiconspng.com/uploads/delete-x-square-button-png-3.png"/></button>
+                    <button onClick={() => deleteOrder(item)}><img src ="./deleteorder.png"/></button>
                 </div>
             )
         })
@@ -85,12 +85,12 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
+                <Box sx={style} className="modal-checkout">
                     <p>Order Summary</p>
                     <div className="modal">
                     {modalProducts}
                     </div>
-                    <button onClick={() => {
+                    <button className="btn10" onClick={() => {
                         if(currentCustomer){
                             navigate("/OrderHistory")
                         } else {

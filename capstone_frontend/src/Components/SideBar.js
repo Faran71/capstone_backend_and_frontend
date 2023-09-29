@@ -22,7 +22,7 @@ const fetchProductsRating = async (rating) => {
 
 
 
-const [value, setValue] = React.useState([20, 37]);
+const [value, setValue] = React.useState([20, 1201]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

@@ -3,6 +3,7 @@
 .oneproduct img{
 width: 30vw;
 height: 60vh;
+border-radius: 20px;
 }
 .oneproduct {
     /* display: grid;
@@ -20,33 +21,36 @@ height: 60vh;
 }
 
 .review-input form {
-    border-style: solid;
-    width: 32vw;
+    width: 34vw;
     display: flex;
 
 }
 
 .review-input form input {
-    border: none;
     width: 26vw;
     height: 10vh;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    background-color: #f3f4f6;
+    color: #111;
 }
 .review-input form button {
     border: none;
     width: 5vw;
     height: 10vh;
     background: none;
-    border-left: 20px;
+    border-left: 17px;
 }
 .review-input form button img {
     width:2vw;
     height: 4.3vh;
+    border-radius: 0;
 
 }
-/* .review-input form button img:hover {
+.review-input form button img:hover {
     scale: 0.5;
-    color: blue;
-} */
+}
 
 .individual-review {
     /* border-style: solid; */
@@ -58,4 +62,31 @@ height: 60vh;
     width: 32.3vw;
     height: 30vh;
     overflow-y: scroll;
+}
+
+.left form button {
+    width: 10vw;
+    margin-left: 1vw;
+    height: 3.5vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #f0c14b;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.left form button:hover {
+    background-color: #ddb347; /* Hover color */
+}
+
+.left form input{
+    width: 15vw;
+    height: 3vh;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    background-color: #f3f4f6;
+    color: #111;
+    margin-left: 2vw;
 }
