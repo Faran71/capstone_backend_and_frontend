@@ -1,4 +1,4 @@
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./NavBar.css"
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from "react";
 
-const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts,currentCustomer, setCurrentCustomer ,setProducts}) => {
+const NavBar = ({ products, order, setOrder, originalProducts, setOriginalProducts, currentCustomer, setCurrentCustomer, setProducts }) => {
     const navigate = useNavigate();
 
     const [modalProducts, setModalProducts] = useState([]);
@@ -23,61 +23,62 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
         width: 600,
         bgcolor: 'background.paper',
         boxShadow: 24,
-        p: 4, 
-      };
+        p: 4,
+    };
 
     const deleteOrder = (e) => {
         setOrder(temp => {
-            return temp.filter(country => country!== e);
+            return temp.filter(country => country !== e);
         })
     }
-    
+
     useEffect(() => {
         const displayOrders = order.map((item) => {
-            return(
+            return (
                 <div className="modalproduct">
-                    <img src={item.product.imageURL}/>
+                    <img src={item.product.imageURL} />
                     <p>{item.product.name} - {item.quantitySold}</p>
-                    <button onClick={() => deleteOrder(item)}><img src ="./deleteorder.png"/></button>
+                    <button onClick={() => deleteOrder(item)}><img src="./deleteorder.png" /></button>
                 </div>
             )
         })
         setModalProducts(displayOrders);
-    },[order])
-    
-      const ifLoggedIn = () => {
-        if(currentCustomer){
-            return(
+    }, [order])
+
+    const ifLoggedIn = () => {
+        if (currentCustomer) {
+            return (
                 <div>
                     <button className="btn4" onClick={() => navigate("/OrderHistory")}>Hello {currentCustomer.name}</button>
                     <button className="btn4" onClick={() => setCurrentCustomer(null)}>LogOut</button>
                 </div>
-                 )
-            
+            )
+
         } else {
             return <button className="btn3" onClick={() => navigate("/LogIn")}>Log In / Register</button>
         }
-      }
+    }
 
-      const fullProducts = () => {
+    const fullProducts = () => {
         setProducts(originalProducts)
-      }
-      
+    }
 
-    return(
+
+    return (
         <div className="nav-bar">
             <button className='btn1' onClick={() => navigate("/")}>
-                <span>Rainforest Retail</span>
-                <img src="./leaf.png"></img></button>
+                <span data-replace="Rainforest Retail">Rainforest Retail</span>
+                <img src="./leaf.png" alt="Leaf" />
+            </button>
             <button className='btn2' onClick={() => {
-                {fullProducts()}
+                { fullProducts() }
                 navigate("/Products")
             }}>All Products</button>
-            
+
             {ifLoggedIn()}
 
-            <button className="btn5" variant= "contained" onClick={handleOpen}>
-                <img src="./cart.png" className="shopping-cart"/>
+            <button className="btn5" variant="contained" onClick={handleOpen}>
+                <img src="./cart.png" className="shopping-cart" />
             </button>
             <Modal
                 open={open}
@@ -88,10 +89,10 @@ const NavBar = ({products,order, setOrder, originalProducts, setOriginalProducts
                 <Box sx={style} className="modal-checkout">
                     <p className="order-summary">Order Summary</p>
                     <div className="modal">
-                    {modalProducts}
+                        {modalProducts}
                     </div>
                     <button className="btn10" onClick={() => {
-                        if(currentCustomer){
+                        if (currentCustomer) {
                             navigate("/OrderHistory")
                         } else {
                             navigate("/LogIn")
