@@ -17,3 +17,15 @@
     justify-content: space-around;
     border-bottom: solid;
   }
+
+  .order button{
+    width: 10vw;
+    margin-left: 90vw;
+    height: 3.5vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #f0c14b;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }

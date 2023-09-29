@@ -11,7 +11,7 @@ const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOrigin
         return(
             <div className="modalproduct">
                     <img src={item.product.imageURL}/>
-                    <p>{item.product.name} - {item.quantitySold}</p>
+                    <p>{item.product.name} x {item.quantitySold}</p>
                     <p> Total = £{item.quantitySold*item.product.price}</p>
             </div>
         )
@@ -51,9 +51,10 @@ const OrderHistoryPage = ({order, setOrder, products,originalProducts, setOrigin
             setOriginalProducts={setOriginalProducts}
             setProducts={setProducts}
             />
-            <div>
+            <div className="order">
                 <h1>Order:</h1>
                 {displayOrders}
+                <hr></hr>
                 <button onClick={handleSubmit}>Buy</button>
             </div>
 
